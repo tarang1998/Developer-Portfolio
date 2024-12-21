@@ -3,7 +3,7 @@ export const experience = {
   title: "Experience",
   subtitle: "Work, Internships and Activities",
 
-  description: `💼 Looking out for software engineering intern roles for Summer 2024`,
+  description: `💼 Looking out for Software Development roles`,
   description1: "💻 Open to work on freelancing Projects.",
 
   currentCompanyName: "Cerebranium.",
@@ -13,6 +13,34 @@ export const experience = {
     {
       title: "Work Experience",
       experiences: [
+
+        {
+          title: "System Analyst Intern",
+          company: "FINRA",
+          company_url: "https://www.finra.org/",
+          logo_path: "finra.png",
+          duration: "May 2024 - Aug 2024",
+          description: [
+            {
+              icon: `📈`,
+              text: `Facilitated seamless integration of ServiceNow and AWS services with internal applications, reducing team effort by 15 hours/week.`
+            },
+            {
+              icon: `📱`,
+              text: `Collaborated with business units to configure SaaS solutions, streamlining processes and defining integration requirements.`
+
+            },
+
+            {
+              icon: `🖥`,
+              text: `Automated backend processes using Python, JavaScript, and Bash scripts, enhancing efficiency and reducing data inconsistencies by 10%.`
+            },
+
+
+
+          ],
+        },
+
 
         {
           title: "Software Developer",
@@ -68,7 +96,7 @@ export const experience = {
               text: `Supervised database migration from a NoSQL (Firebase) database to a relational database (Cloud Spanner) due to certain drawbacks with counting operations in the former thus in the end resulting in faster query output.
                   `
             },
-           
+
             {
               icon: `📌`,
               text: `Analyzed the collected data using Big Query for calculating individual student performance, course performance and cost estimation for our ed-tech applications which helped to provide insights on the student journey and reduce cost by 40%.
@@ -79,13 +107,13 @@ export const experience = {
               text: `Developed multiple API’s for the mobile applications in typescript in a Node JS environment following Clean Architecture principles.`
             },
             {
-              icon : `☁️`,
-              text : `Automated onboarding and data upload workflows for 1000’s of users for our apps using python scripts to accelerate manual operations.`
+              icon: `☁️`,
+              text: `Automated onboarding and data upload workflows for 1000’s of users for our apps using python scripts to accelerate manual operations.`
 
             },
             {
-              icon : `🖥️`,
-              text : `Collaborated with team members to develop a computer vision video proctoring system that could process up to 8000 assessment videos per day for our exam conduction ed-tech application.
+              icon: `🖥️`,
+              text: `Collaborated with team members to develop a computer vision video proctoring system that could process up to 8000 assessment videos per day for our exam conduction ed-tech application.
               `
             },
             {
@@ -97,7 +125,7 @@ export const experience = {
               icon: `📈`,
               text: `Monitored error occurrences in the applications using Sentry thereby increasing its stability to 95% and setup sendgrid and utilized its API's for email marketing and email notifications.`
             },
-           
+
 
             {
               icon: `✨`,
@@ -108,7 +136,7 @@ export const experience = {
 
           ],
         },
-        
+
       ],
     },
     {
@@ -158,24 +186,6 @@ export const experience = {
     {
       title: "Activities",
       experiences: [
-       
-
-        {
-          title: "Smart India Hackathon",
-          company: "",
-          company_url: "https://www.sih.gov.in/sih2019",
-          logo_path: "SIH.png",
-          duration: "Mar 2019",
-          description: [
-
-            {
-              icon: `💻`,
-              text: `Represented our college in a 36 hour national level hackathon conducted at Sathyabama University, Chennai where our team came up with a solution to present obstacles around an aerodome.`,
-            },
-
-          ],
-        },
-
         {
           title: "Saboo Siddik College Hackathon",
           company: "",
@@ -194,24 +204,42 @@ export const experience = {
         },
 
         {
-          title: "Aavhan IIT Bombay Sports Fest",
+          title: "Smart India Hackathon",
           company: "",
-          company_url: "https://aavhan.org/#/",
-          logo_path: "aavhan.png",
-          duration: "Aug 2023",
+          company_url: "https://www.sih.gov.in/sih2019",
+          logo_path: "SIH.png",
+          duration: "Mar 2019",
           description: [
 
             {
-              icon: `🏋️‍♂️`,
-              text: `Won 3rd place for weightlifting (under 80kg category) held at IIT Bombay, Mumbai.
-              `,
+              icon: `💻`,
+              text: `Represented our college in a 36 hour national level hackathon conducted at Sathyabama University, Chennai where our team came up with a solution to present obstacles around an aerodome.`,
             },
 
           ],
         },
 
 
-      
+
+        // {
+        //   title: "Aavhan IIT Bombay Sports Fest",
+        //   company: "",
+        //   company_url: "https://aavhan.org/#/",
+        //   logo_path: "aavhan.png",
+        //   duration: "Aug 2023",
+        //   description: [
+
+        //     {
+        //       icon: `🏋️‍♂️`,
+        //       text: `Won 3rd place for weightlifting (under 80kg category) held at IIT Bombay, Mumbai.
+        //       `,
+        //     },
+
+        //   ],
+        // },
+
+
+
       ],
     },
   ],

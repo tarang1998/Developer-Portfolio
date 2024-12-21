@@ -36,8 +36,8 @@ function ProblemCard(props) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
-                                        color:theme.text_color 
-        
+                                        color: theme.text_color
+
                                     }}
                                 >
                                     {problem["title"]}
@@ -54,7 +54,7 @@ function ProblemCard(props) {
                             <div className="problemCardDifficultTag" style={{
                                 backgroundColor: programming.problemDifficulty[problem['difficulty']].color,
                                 borderColor: programming.problemDifficulty[problem['difficulty']].color,
-                                width: "50px",
+                                width: "60px",
                                 height: "22px"
                             }}>
                                 <p

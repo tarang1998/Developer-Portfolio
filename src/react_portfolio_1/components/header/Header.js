@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,9 +31,8 @@ const Header = (props) => {
     outline: none;
     transition: all 0.2s ease-in-out;
     :hover: {
-      boxShadow: 0 3px 8px ${
-        props.theme.name === "light" ? "#F7D774" : "#646464"
-      },
+      boxShadow: 0 3px 8px ${props.theme.name === "light" ? "#F7D774" : "#646464"
+    },
     },
   `
 
@@ -45,7 +44,7 @@ const Header = (props) => {
 
   function changeTheme() {
 
-    changeCount(count+1)
+    changeCount(count + 1)
 
     if (props.theme.name === "light") {
       props.setTheme("dark");
@@ -69,141 +68,142 @@ const Header = (props) => {
       />
     );
 
-  const headerlinkStyle={
-    'color' : props.theme.contrast_color
+  const headerlinkStyle = {
+    'color': props.theme.contrast_color
   }
 
   return (
     <Fade duration={1000} top>
-    <Navbar 
-    //sticky="top" 
-    className="header container_shadow" 
-    expand="lg"
-    style = {{
-      'border-color': props.theme.contrast_color,
-      'margin-top': 20,
-    }}
-    >
-      {/* Home */}
+      <Navbar
+        //sticky="top" 
+        className="header container_shadow"
+        expand="lg"
+        style={{
+          'border-color': props.theme.contrast_color,
+          'margin-top': 20,
+        }}
+      >
+        {/* Home */}
 
-      <Nav.Link as={NavLink} to="/">
-        <Navbar.Brand className="header_home" style={{
-          // 'background-color':props.theme.contrast_color
-        }}>
-          <HomeRounded 
-            style={{
-              'color':props.theme.contrast_color,
-              'font-size': '30px'
-            }}/>
-        </Navbar.Brand>
-      </Nav.Link>
+        <Nav.Link as={NavLink} to="/">
+          <Navbar.Brand className="header_home" style={{
+            // 'background-color':props.theme.contrast_color
+          }}>
+            <HomeRounded
+              style={{
+                'color': props.theme.contrast_color,
+                'font-size': '30px'
+              }} />
+          </Navbar.Brand>
+        </Nav.Link>
 
 
-      <Navbar.Toggle  style={{
-        //  'border-color':props.theme.contrast_color,
-         'background-color': props.theme.projectCard
+        <Navbar.Toggle style={{
+          //  'border-color':props.theme.contrast_color,
+          'background-color': props.theme.projectCard
 
-      }}/>
+        }} />
 
-      <Navbar.Collapse>
-        <Nav className="header-left">
-          {/* Resume Link */}
-          <Nav.Link
-            as={NavLink}
-            to="/"
-            className={pathName == "/" ? "header_link_active" : "header_link"}
-            style = {headerlinkStyle}
-          >
-            Home
-          </Nav.Link>
+        <Navbar.Collapse>
+          <Nav className="header-left">
+            {/* Resume Link */}
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              className={pathName == "/" ? "header_link_active" : "header_link"}
+              style={headerlinkStyle}
+            >
+              Home
+            </Nav.Link>
 
-          {/* Portfolio Link */}
-          <Nav.Link
-            as={NavLink}
-            to="/workExperience"
-            className={
-              pathName == "/workExperience" ? "header_link_active" : "header_link"
-            }
-            style = {headerlinkStyle}
+            <Nav.Link
+              as={NavLink}
+              to="/projects"
+              className={
+                pathName == "/projects" ? "header_link_active" : "header_link"
+              }
+              style={headerlinkStyle}
+            >
+              Projects
+            </Nav.Link>
 
-          >
-            Experience
-          </Nav.Link>
+            {/* Portfolio Link */}
+            <Nav.Link
+              as={NavLink}
+              to="/workExperience"
+              className={
+                pathName == "/workExperience" ? "header_link_active" : "header_link"
+              }
+              style={headerlinkStyle}
 
-          <Nav.Link
-            as={NavLink}
-            to="/education"
-            className={
-              pathName == "/education" ? "header_link_active" : "header_link"
-            }
-            style = {headerlinkStyle}
+            >
+              Experience
+            </Nav.Link>
 
-          >
-            Education
-          </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/education"
+              className={
+                pathName == "/education" ? "header_link_active" : "header_link"
+              }
+              style={headerlinkStyle}
 
-          <Nav.Link
-            as={NavLink}
-            to="/projects"
-            className={
-              pathName == "/projects" ? "header_link_active" : "header_link"
-            }
-            style = {headerlinkStyle}
-          >
-            Projects
-          </Nav.Link>
+            >
+              Education
+            </Nav.Link>
 
-          <Nav.Link
-            as={NavLink}
-            to="/programming"
-            className={
-              pathName == "/programming" ? "header_link_active" : "header_link"
-            }
-            style = {headerlinkStyle}
-          >
-            Programming
-          </Nav.Link>
-        </Nav>
+            <Nav.Link
+              as={NavLink}
+              to="/programming"
+              className={
+                pathName == "/programming" ? "header_link_active" : "header_link"
+              }
+              style={headerlinkStyle}
+            >
+              Programming
+            </Nav.Link>
 
-        <div className="header-right">
 
-          {/* {Object.keys(mediaLinks.socials).map((key) => (
+          </Nav>
+
+          <div className="header-right">
+
+            {/* {Object.keys(mediaLinks.socials).map((key) => (
             <a href={mediaLinks.socials[key].link} target="_blank">
               {mediaLinks.socials[key].icon}
             </a>
           ))} */}
 
-          {/* <CustomButton text={"Hire Me"} icon={<Telegram />} /> */}
+            {/* <CustomButton text={"Hire Me"} icon={<Telegram />} /> */}
 
-          <HeadShake spy={count}>
-            <button style={{
-              cursor: "pointer",
-              height: "45px",
-              width: "45px",
-              borderRadius: "50%",
-              border: "none",
-              // alignItems: "center",
-              // justifyContent: "center",
-              backgroundColor: props.theme.name === "light" ? "#7CD1F7" : "#292C3F",
-              outline: "none",
-              transition: "all 0.2s ease-in-out",
-              ":hover": {
-                boxShadow: `0 3px 8px ${
-                  props.theme.name === "light" ? "#F7D774" : "#646464"
-                }`,
-              },
-            }} 
-            onClick={changeTheme}>
-              {icon}
-            </button>
-          </HeadShake>
-          
+            <HeadShake spy={count}>
+              <button style={{
+                cursor: "pointer",
+                height: "45px",
+                width: "45px",
+                borderRadius: "50%",
+                border: "none",
+                // alignItems: "center",
+                // justifyContent: "center",
+                backgroundColor: props.theme.name === "light" ? "#7CD1F7" : "#292C3F",
+                outline: "none",
+                transition: "all 0.2s ease-in-out",
+                ":hover": {
+                  boxShadow: `0 3px 8px ${props.theme.name === "light" ? "#F7D774" : "#646464"
+                    }`,
+                },
+              }}
+                onClick={changeTheme}>
+                {icon}
+              </button>
+            </HeadShake>
 
-          {/* <ThemeTogglingButton  onClick={changeTheme}>{icon}</ThemeTogglingButton> */}
 
-        </div>
-      </Navbar.Collapse>
-    </Navbar>
+            {/* <ThemeTogglingButton  onClick={changeTheme}>{icon}</ThemeTogglingButton> */}
+
+          </div>
+        </Navbar.Collapse>
+      </Navbar>
     </Fade>
   );
 };

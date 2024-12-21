@@ -23,6 +23,14 @@
 - Education 
 - Projects 
 
+## Running the application 
+
+```
+npm install --legacy-peer-deps
+npm start
+```
+
+
 ## References
 
 - [saadpasta/developerFolio](https://github.com/saadpasta/developerFolio)

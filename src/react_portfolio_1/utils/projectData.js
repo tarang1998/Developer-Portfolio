@@ -127,7 +127,37 @@ export const projectData = {
       style: {
         color: "#CB3837",
       },
-    }
+    },
+
+    "AWS": {
+      name: "AWS",
+      iconifyClass: "skill-icons:aws-dark",
+
+    },
+
+    "DOCKER": {
+      name: "DOCKER",
+      iconifyClass: "simple-icons:docker",
+
+    },
+
+    "KUBERNETES": {
+      name: "KUBERNETES",
+      iconifyClass: "skill-icons:kubernetes",
+
+    },
+
+
+    "GITHUBACTIONS": {
+      name: "GITHUBACIONS",
+      iconifyClass: "simple-icons:githubactions",
+
+    },
+
+
+
+
+
 
   },
 
