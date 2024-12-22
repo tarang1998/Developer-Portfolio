@@ -22,19 +22,23 @@ export const experience = {
           duration: "May 2024 - Aug 2024",
           description: [
             {
-              icon: `📈`,
+              icon: `⌨️`,
               text: `Facilitated seamless integration of ServiceNow and AWS services with internal applications, reducing team effort by 15 hours/week.`
             },
             {
-              icon: `📱`,
+              icon: `👨‍💼`,
               text: `Collaborated with business units to configure SaaS solutions, streamlining processes and defining integration requirements.`
 
             },
 
             {
-              icon: `🖥`,
+              icon: `⚙️`,
               text: `Automated backend processes using Python, JavaScript, and Bash scripts, enhancing efficiency and reducing data inconsistencies by 10%.`
             },
+            {
+              icon: `✨`,
+              text: `Skills Developed : AWS, ServiceNow, Python, Bash Scripting, JavaScript`
+            }
 
 
 

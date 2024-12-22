@@ -1,11 +1,11 @@
-import { Container, Grid} from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import WorkExperience from "./pages/workExperience/workExperience";
 import Home from "./pages/home/Home";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./reactPortfolio.css";
 import Fade from 'react-reveal/Fade';
 import Education from "./pages/education/education";
@@ -36,38 +36,38 @@ function ReactPortfolio(props) {
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Router>
-              
-              <Header theme={theme} setTheme={setTheme}/>
+
+              <Header theme={theme} setTheme={setTheme} />
 
               <Fade duration={1000} bottom>
                 <div className="main_content main_border container_shadow "
                   style={{
                     'background-color': theme.body_color,
-                    'border-color' : theme.contrast_color,
+                    'border-color': theme.contrast_color,
                     // 'max-height' : '200px',
                     // 'overflow-y': 'scroll',
                   }}>
                   <Switch>
                     <Route path="/programming">
-                      <Programming theme = {theme}/>
+                      <Programming theme={theme} />
                     </Route>
-                    <Route path = "/projects">
-                      <Projects theme = {theme}/>  
+                    <Route path="/projects">
+                      <Projects theme={theme} />
                     </Route>
                     <Route path="/education">
-                      <Education/>
+                      <Education />
                     </Route>
                     <Route path="/workExperience">
                       <WorkExperience />
                     </Route>
                     <Route path="/">
-                      <Home/>
+                      <Home />
                     </Route>
                   </Switch>
                 </div>
               </Fade>
 
-              <Footer/>
+              <Footer />
             </Router>
           </Grid>
         </Grid>

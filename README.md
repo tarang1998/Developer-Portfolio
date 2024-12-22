@@ -14,6 +14,7 @@
 ## Illustrations 
 
 - [unDraw](https://undraw.co/illustrations)
+- [Skill Icons](https://icon-sets.iconify.design/skill-icons/?keyword=Sk)
 
 
 ## Sections

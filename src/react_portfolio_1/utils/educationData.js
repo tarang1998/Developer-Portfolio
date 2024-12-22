@@ -3,7 +3,7 @@ export const education = {
   title: "Education",
   subtitle: "Qualifications and Certificates",
 
-  description: `🤓 Masters Of Software Engineering Graduate Student @ UMD `,
+  description: `🤓 Currently a Grad pursuing Software Engineering @ UMD `,
   description1: `📜 Completed my Bachelors in Computer Engineering in 2020 from Mumbai University`,
 
   degrees: [
@@ -14,7 +14,7 @@ export const education = {
       alt_name: "UMCP",
       duration: "2023 - 2025",
       descriptions: [
-        "⚡ Masters Of Software Engineering graduate student.",
+        "⚡ Software Engineering graduate student.",
         "⚡ Relevant Courses :  Software Engineering, AI and Deep Learning , Cloud Computing (GCP, AWS), Containerization (Docker and Kubernetes)",
 
 

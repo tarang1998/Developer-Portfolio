@@ -3,7 +3,7 @@ export const projectData = {
   title: "Projects",
   subtitle: "",
 
-  description: `💻 Projects and applications developed and maintained by me throughout my career using a variety of the latest technology tools like Flutter, Google Cloud Platforms, NodeJS and programming languages like Python, Dart, TypeScript, JavaScript, HTML, CSS`,
+  description: `💻 Developed and maintained a diverse set of projects throughout my career, utilizing a broad spectrum of modern technologies and frameworks. My expertise includes building high-performance mobile applications with Flutter, designing cloud solutions on GCP and AWS, and crafting robust backend services using Node.js. `,
 
   platforms: {
     "GITHUB": {
@@ -153,6 +153,25 @@ export const projectData = {
       iconifyClass: "simple-icons:githubactions",
 
     },
+
+    "POSTGRESQL": {
+      name: "POSTGRESQL",
+      iconifyClass: "simple-icons:postgresql",
+
+    },
+
+    "MYSQL": {
+      name: "MYSQL",
+      iconifyClass: "skill-icons:mysql-dark"
+    },
+
+    "PHP": {
+      name: "PHP",
+      iconifyClass: "simple-icons:php",
+
+    },
+
+
 
 
 

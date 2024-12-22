@@ -4,9 +4,9 @@ export const skills = {
       title: "Cloud Computing & Infrastructure",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Engineered and deployed highly scalable, secure applications leveraging a comprehensive mix of AWS and GCP services, optimizing both performance and cost-efficiency for demanding, high-traffic production environments, ensuring seamless scalability and operational excellence.",
-        "⚡ Architected and implemented end-to-end monitoring solutions for Kubernetes applications using AWS EKS, Docker, Prometheus, Grafana, and AWS CloudWatch, delivering real-time observability, advanced performance insights, and improved system reliability, enabling proactive issue resolution and system optimization.",
-        "⚡ Automated CI/CD pipelines and testing workflows, streamlining application development and deployment across Kubernetes-based infrastructures on AWS and GCP, ensuring continuous delivery of high-quality applications with minimal downtime and enhanced system reliability, performance, and scalability.",
+        "⚡ Engineered and deployed highly scalable, secure applications leveraging a comprehensive mix of AWS and GCP services, optimizing both performance and cost-efficiency for demanding, high-traffic production environments.",
+        "⚡ Architected and implemented end-to-end monitoring solutions for Kubernetes applications using AWS EKS, Docker, Prometheus, Grafana, and AWS CloudWatch, delivering real-time observability, performance insights, and improved system reliability.",
+        "⚡ Automated CI/CD pipelines and testing workflows, streamlining application development and deployment across Kubernetes-based infrastructures on AWS and GCP, ensuring continuous delivery of high-quality applications with minimal downtime.",
 
       ],
       softwareSkills: [
@@ -90,7 +90,7 @@ export const skills = {
       fileName: "MobileDevelopmentImg",
       skills: [
         "⚡ Expertise in developing high-performance, scalable cross-platform mobile applications using Flutter, delivering seamless experiences across iOS and Android.",
-        "⚡ Successfully built and deployed several mobile applications from the ground up, now available on the App Store and Google Play, with a combined user base of over 10,000 active users.",
+        "⚡ Successfully built and deployed several mobile applications, now available on the App Store and Google Play, with a combined user base of over 15,000 active users.",
 
       ],
       softwareSkills: [
