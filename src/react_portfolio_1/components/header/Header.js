@@ -128,7 +128,7 @@ const Header = (props) => {
             </Nav.Link>
 
             {/* Portfolio Link */}
-            <Nav.Link
+            {/* <Nav.Link
               as={NavLink}
               to="/workExperience"
               className={
@@ -150,9 +150,9 @@ const Header = (props) => {
 
             >
               Education
-            </Nav.Link>
+            </Nav.Link> */}
 
-            <Nav.Link
+            {/* <Nav.Link
               as={NavLink}
               to="/programming"
               className={
@@ -161,7 +161,7 @@ const Header = (props) => {
               style={headerlinkStyle}
             >
               Programming
-            </Nav.Link>
+            </Nav.Link> */}
 
 
           </Nav>
