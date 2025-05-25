@@ -14,8 +14,8 @@ export const education = {
       alt_name: "UMCP",
       duration: "2023 - 2025",
       descriptions: [
-        "⚡ Software Engineering graduate student.",
-        "⚡ Relevant Courses :  Software Engineering, AI and Deep Learning , Cloud Computing (GCP, AWS), Containerization (Docker and Kubernetes)",
+        // "⚡ Software Engineering graduate student.",
+        // "⚡ Relevant Coursework :  Software Engineering, AI and Deep Learning , Cloud Computing (GCP, AWS), Containerization (Docker and Kubernetes)",
 
 
       ],
@@ -28,8 +28,8 @@ export const education = {
       alt_name: "VIT",
       duration: "2016 - 2020",
       descriptions: [
-        "⚡ Relevant Courses : Structured Programming Languages(C), Object Oriented Programming(Java), Operating System, Database Management, Computer Networks, Data Structures And Algorithms, Web Designing, Software Engineering, Machine Learning, Data Warehousing and Mining, Big Data and Analytics, Artificial Intelligence, NLP, Distributed Computing, Cloud Computing.",
-        "⚡ Created a AR mobile application in Unity 3D as my final year project to display 3D models of food items on scanning the items in the menu which could be customized based on the user needs aimed to enhance the user experience at restaurants"
+        // "⚡ Relevant Courses : Structured Programming Languages(C), Object Oriented Programming(Java), Operating System, Database Management, Computer Networks, Data Structures And Algorithms, Web Designing, Software Engineering, Machine Learning, Data Warehousing and Mining, Big Data and Analytics, Artificial Intelligence, NLP, Distributed Computing, Cloud Computing.",
+        // "⚡ Created a AR mobile application in Unity 3D as my final year project to display 3D models of food items on scanning the items in the menu which could be customized based on the user needs aimed to enhance the user experience at restaurants"
 
       ],
       website_link: "https://vit.edu.in/",

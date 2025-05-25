@@ -25,10 +25,17 @@
   margin-top: 110px;
 }
 
+
+.skills-section-text-software-skills > *{
+  width: 400px;
+  height: 500px;
+  
+}
+
 .skills-section-text-div {
   margin-left: 50px;
   margin-top: 3%;
-  padding-top: 80px;
+  padding-top: 300px;
   /* font-size: large; */
   font-family: var(--font-google-sans-regular);
 }
@@ -82,9 +89,10 @@
   } */
 
   .skills-section-image-div {
-    order: 2;
+    order: 2;    
   }
 }
+
 
 @media (max-width: 960px) {
   .skills-section-image-grid {

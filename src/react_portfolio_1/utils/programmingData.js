@@ -162,33 +162,33 @@ export const programming = {
         color: "#f3b548",
       },
     },
-    {
-      platform: "Hackerrank",
-      name: "HACKER_RANK",
-      link: "https://www.hackerrank.com/tarang98?hr_r=1",
-      iconifyIconId: "simple-icons:hackerrank",
-      style: {
-        color: "#49b463",
-      },
-    },
-    {
-      platform: "Codechef",
-      name: "CODE_CHEF",
-      link: "https://www.codechef.com/users/tarang_98",
-      iconifyIconId: "simple-icons:codechef",
-      style: {
-        color: "#9ea39f",
-      },
-    },
-    {
-      platform: "GFG",
-      name: "GFG",
-      link: "https://auth.geeksforgeeks.org/user/tarangnair98/practice/",
-      iconifyIconId: "simple-icons:geeksforgeeks",
-      style: {
-        color: "#157d2f",
-      },
-    },
+    // {
+    //   platform: "Hackerrank",
+    //   name: "HACKER_RANK",
+    //   link: "https://www.hackerrank.com/tarang98?hr_r=1",
+    //   iconifyIconId: "simple-icons:hackerrank",
+    //   style: {
+    //     color: "#49b463",
+    //   },
+    // },
+    // {
+    //   platform: "Codechef",
+    //   name: "CODE_CHEF",
+    //   link: "https://www.codechef.com/users/tarang_98",
+    //   iconifyIconId: "simple-icons:codechef",
+    //   style: {
+    //     color: "#9ea39f",
+    //   },
+    // },
+    // {
+    //   platform: "GFG",
+    //   name: "GFG",
+    //   link: "https://auth.geeksforgeeks.org/user/tarangnair98/practice/",
+    //   iconifyIconId: "simple-icons:geeksforgeeks",
+    //   style: {
+    //     color: "#157d2f",
+    //   },
+    // },
 
 
   ],

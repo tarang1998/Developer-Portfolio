@@ -39,7 +39,7 @@ const Education = () => {
               {education['title']}
             </div>
 
-            <div className="educationHeadingTextSubtitle">
+            {/* <div className="educationHeadingTextSubtitle">
               {education['subtitle']}
             </div>
 
@@ -47,7 +47,7 @@ const Education = () => {
               {education['description']}
               <br/>
               {education["description1"]}
-            </div>
+            </div> */}
 
             {/* <ProgrammingPlatFroms programmingPlatforms={education.competitiveProgrammingPlatforms} /> */}
 
@@ -63,9 +63,9 @@ const Education = () => {
 
           <Fade bottom duration={2000} distance="20px">
 
-            <h1 className="educationDegreesDivHeader">
+            {/* <h1 className="educationDegreesDivHeader">
               Degrees Received
-            </h1>
+            </h1> */}
 
           </Fade>
 
@@ -170,7 +170,7 @@ const Education = () => {
                       );
                     })}
 
-                    <a
+                    {/* <a
                       href={degree.website_link}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -204,7 +204,7 @@ const Education = () => {
                       >
                         Visit Website
                       </p>
-                    </a>
+                    </a> */}
                   </div>
 
                 </div>

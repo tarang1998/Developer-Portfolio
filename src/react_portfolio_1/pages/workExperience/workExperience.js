@@ -33,7 +33,7 @@ const WorkExperience = () => {
                             {experience['title']}
                         
                         </h1>
-                        <h3
+                        {/* <h3
                             className="workExperienceTextGridSubHeadingText"
                             style={{ color: currentTheme.contrast_color }}
                         >
@@ -48,7 +48,7 @@ const WorkExperience = () => {
                            
                             <br/>
                             {experience["description1"]}
-                        </p>
+                        </p> */}
                     </Grid>
 
                 </Grid>
