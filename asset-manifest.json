@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c3406b6.chunk.css",
-    "main.js": "/static/js/main.5ba6e762.chunk.js",
-    "main.js.map": "/static/js/main.5ba6e762.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3d46f613.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3d46f613.js.map",
-    "static/css/2.3a251c85.chunk.css": "/static/css/2.3a251c85.chunk.css",
-    "static/js/2.e72a5187.chunk.js": "/static/js/2.e72a5187.chunk.js",
-    "static/js/2.e72a5187.chunk.js.map": "/static/js/2.e72a5187.chunk.js.map",
-    "static/js/3.0a87b407.chunk.js": "/static/js/3.0a87b407.chunk.js",
-    "static/js/3.0a87b407.chunk.js.map": "/static/js/3.0a87b407.chunk.js.map",
+    "main.css": "/static/css/main.b9b92890.chunk.css",
+    "main.js": "/static/js/main.d99338a7.chunk.js",
+    "main.js.map": "/static/js/main.d99338a7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cc546e8e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cc546e8e.js.map",
+    "static/js/2.6e47c0af.chunk.js": "/static/js/2.6e47c0af.chunk.js",
+    "static/js/2.6e47c0af.chunk.js.map": "/static/js/2.6e47c0af.chunk.js.map",
+    "static/js/3.a3e9e07b.chunk.js": "/static/js/3.a3e9e07b.chunk.js",
+    "static/js/3.a3e9e07b.chunk.js.map": "/static/js/3.a3e9e07b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.3a251c85.chunk.css.map": "/static/css/2.3a251c85.chunk.css.map",
-    "static/css/main.4c3406b6.chunk.css.map": "/static/css/main.4c3406b6.chunk.css.map",
-    "static/js/2.e72a5187.chunk.js.LICENSE.txt": "/static/js/2.e72a5187.chunk.js.LICENSE.txt",
+    "static/css/main.b9b92890.chunk.css.map": "/static/css/main.b9b92890.chunk.css.map",
+    "static/js/2.6e47c0af.chunk.js.LICENSE.txt": "/static/js/2.6e47c0af.chunk.js.LICENSE.txt",
     "static/media/UMCP.svg": "/static/media/UMCP.5022b9de.svg",
     "static/media/UMCP.webp": "/static/media/UMCP.dbd85be0.webp",
     "static/media/VIT.png": "/static/media/VIT.d60927cc.png",
@@ -27,10 +25,9 @@
     "static/media/tarang1.jpg": "/static/media/tarang1.fd57b585.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3d46f613.js",
-    "static/css/2.3a251c85.chunk.css",
-    "static/js/2.e72a5187.chunk.js",
-    "static/css/main.4c3406b6.chunk.css",
-    "static/js/main.5ba6e762.chunk.js"
+    "static/js/runtime-main.cc546e8e.js",
+    "static/js/2.6e47c0af.chunk.js",
+    "static/css/main.b9b92890.chunk.css",
+    "static/js/main.d99338a7.chunk.js"
   ]
 }
