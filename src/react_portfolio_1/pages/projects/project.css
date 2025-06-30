@@ -1,9 +1,8 @@
-
 .projectHeadingImage {
   margin-top: 50px !important;
 }
 
-.projectHeadingImage > * {
+.projectHeadingImage>* {
   max-width: 100%;
   height: auto;
 }
@@ -42,18 +41,16 @@
 
 .repo-cards-div-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem 1rem;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 60px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+  margin: 60px 20px 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-
 
 .general-btn {
   text-decoration: none;
-  color: rgb(71, 69, 69); 
+  color: rgb(71, 69, 69);
   margin-top: 10px !important;
   border-radius: 4px;
   border-width: 0px;
@@ -64,12 +61,7 @@
   font-size: 17px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-
 }
-
-
-
-
 
 @media (max-width: 1380px) {
   .projectHeadingTextTitle {
@@ -84,6 +76,10 @@
     font-size: var(--textSizeMaxWidth1380);
   }
 
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 1110px) {
@@ -99,6 +95,10 @@
     font-size: var(--textSizeMaxWidth1100);
   }
 
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -115,13 +115,16 @@
   }
 
   .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 30px 10px 0 10px;
+    gap: 1rem;
   }
-
- 
-
 }
 
+@media (max-width: 480px) {
+  .repo-cards-div-main {
+    grid-template-columns: 1fr;
+    margin: 20px 5px 0 5px;
+    gap: 1rem;
+  }
+}
