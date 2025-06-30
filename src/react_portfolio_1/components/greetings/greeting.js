@@ -11,6 +11,7 @@ import './greeting.css'
 import { contactPlatforms } from "../../utils/portfolioData"
 import ContactPlatFroms from "../../pages/home/contactPlatfroms/contactPlatforms";
 import { Button } from "react-bootstrap";
+import { GetApp } from "@material-ui/icons";
 
 
 const Greetings = () => {
@@ -44,7 +45,13 @@ const Greetings = () => {
 
               <ContactPlatFroms className="contact-platforms" contactPlatforms={contactPlatforms} />
 
-              <Button className = "resume-button" onClick={() => window.open(personalData.resumeLink, "_blank")}> Resume</Button>
+              <Button
+                className="resume-button"
+                onClick={() => window.open(personalData.resumeLink, "_blank")}
+              >
+                <GetApp style={{ marginRight: '8px', fontSize: '18px' }} />
+                Resume
+              </Button>
 
             </div>
           </Grid>
