@@ -30,6 +30,10 @@
 .repo-name-div {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 2.5rem;
 }
 
 .repo-svg {
@@ -38,17 +42,38 @@
 }
 
 .repo-name {
-  white-space: nowrap;
-  line-height: 1.1;
-  text-overflow: ellipsis;
-  color: rgb(36, 41, 46);
-  font-family: "Google Sans Regular";
-  margin-bottom: 0.75rem;
   font-size: var(--subtitleSize);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  overflow: hidden;
-  margin: 0px;
+  font-weight: 400;
+  margin: 0;
+  color: rgb(36, 41, 46);
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* Only apply scrolling animation when text overflows */
+.repo-name.scroll {
+  animation: scrollText 8s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-30%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.repo-name.scroll:hover {
+  animation-play-state: paused;
 }
 
 .repo-star-svg {
@@ -57,29 +82,101 @@
 
 .repo-subtitle {
   font-size: var(--textSize);
+  font-weight: 300;
+  margin: 0;
+  color: rgb(36, 41, 46);
+  line-height: 1.3;
+  min-height: 1.5rem;
+}
+
+/* Description Section */
+.project-card-description {
+  flex: 1 1 auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .repo-description {
   font-size: var(--textSize);
+  margin: 0;
+  color: rgb(36, 41, 46);
   word-wrap: break-word;
   text-align: left;
-  display: -webkit-box;
   font-family: "Google Sans Regular";
+  line-height: 1.5;
+  flex: 1;
+  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer Section */
+.project-card-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
 .repo-details {
+  margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.repo-creation-date {
+.repo-details .MuiGrid-container {
   margin: 0;
-  font-family: "Google Sans Regular";
-  font-weight: 400;
-  margin-left: 0px;
-  margin-right: auto;
+  align-items: flex-start;
+  min-height: 80px;
+}
+
+.repo-details .MuiGrid-item {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Ensure both columns have equal height and start at same baseline */
+.repo-details .MuiGrid-item:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding-right: 0.5rem;
+}
+
+.repo-details .MuiGrid-item:last-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  padding-left: 0.5rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .repo-details .MuiGrid-container {
+    min-height: 70px;
+  }
+
+  .repo-details .MuiGrid-item:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  .repo-details .MuiGrid-item:last-child {
+    border-left: none;
+    border-bottom: none;
+    padding-left: 0;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-details .MuiGrid-container {
+    min-height: 60px;
+  }
 }
 
 /* Project card container styles */
@@ -93,6 +190,20 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+}
+
+/* Project Card Container */
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* Header Section */
+.project-card-header {
+  flex: 0 0 auto;
+  margin-bottom: 1rem;
 }
 
 /* Responsive text sizing */
@@ -125,6 +236,10 @@
 }
 
 @media (max-width: 768px) {
+  .project-card-container {
+    min-height: 280px;
+  }
+
   .repo-name {
     font-size: var(--subtitleSizeMaxWidth768);
   }
@@ -135,18 +250,19 @@
 
   .repo-description {
     font-size: var(--textSizeMaxWidth768);
+    -webkit-line-clamp: 3;
   }
 
   .repo-details {
-    flex-direction: column;
-  }
-
-  .repo-creation-date {
-    font-size: var(--smallTextSizeMaxWidth768);
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
+  .project-card-container {
+    min-height: 260px;
+  }
+
   .repo-name {
     font-size: var(--subtitleSizeMaxWidth480);
   }
@@ -157,9 +273,10 @@
 
   .repo-description {
     font-size: var(--textSizeMaxWidth480);
+    -webkit-line-clamp: 3;
   }
 
-  .repo-creation-date {
-    font-size: var(--smallTextSizeMaxWidth480);
+  .repo-details {
+    gap: 0.5rem;
   }
 }

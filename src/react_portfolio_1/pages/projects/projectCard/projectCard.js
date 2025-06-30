@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Fade } from "react-reveal";
 import { style } from "glamor";
 import "./projectCard.css"
@@ -7,6 +7,39 @@ import { Grid } from "@material-ui/core";
 import ProjectLinks from "./projectLinks/projectLinks";
 
 export default function ProjectCard({ repo, theme }) {
+  const titleRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    // Check if title text overflows its container
+    const checkOverflow = () => {
+      if (titleRef.current && containerRef.current) {
+        const textElement = titleRef.current;
+        const containerElement = containerRef.current;
+
+        // Get the actual width of the text content
+        const textWidth = textElement.scrollWidth;
+        const containerWidth = containerElement.clientWidth;
+
+        const isOverflowing = textWidth > containerWidth;
+
+        if (isOverflowing) {
+          textElement.classList.add('scroll');
+        } else {
+          textElement.classList.remove('scroll');
+        }
+      }
+    };
+
+    // Check on mount and window resize
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+
+    return () => {
+      window.removeEventListener('resize', checkOverflow);
+    };
+  }, [repo.name]);
+
   // function openRepoinNewTab(url) {
   //   var win = window.open(url, "_blank");
   //   win.focus();
@@ -35,30 +68,47 @@ export default function ProjectCard({ repo, theme }) {
           // onClick={() => openRepoinNewTab(repo.url)}
           style={{ backgroundColor: theme.projectCard }}
         >
-          <div className="repo-name-div">
-            <p className="repo-name" style={{ color: theme.contrast_color }}>
-              {repo.name}
-            </p>
-          </div>
-          <div className="repo-name-div">
-            <p className="repo-subtitle" style={{ color: theme.contrast_color }}>
-              {repo.subtitle}
-            </p>
-          </div>
-          <p className="repo-description" style={{ color: theme.contrast_color }}>
-            {repo.description}
-          </p>
-          <br />
+          <div className="project-card-container">
+            {/* Header Section */}
+            <div className="project-card-header">
+              <div ref={containerRef} className="repo-name-div">
+                <p
+                  ref={titleRef}
+                  className="repo-name"
+                  style={{ color: theme.contrast_color }}
+                >
+                  {repo.name}
+                </p>
+              </div>
+              {repo.subtitle && (
+                <div className="repo-name-div">
+                  <p className="repo-subtitle" style={{ color: theme.contrast_color }}>
+                    {repo.subtitle}
+                  </p>
+                </div>
+              )}
+            </div>
 
-          <div className="repo-details">
-            <Grid container>
-              <Grid item sm={6} xs={12}>
-                <ProjectLanguages techStack={repo.techStack} />
-              </Grid>
-              <Grid item sm={6} xs={12}>
-                <ProjectLinks urls={repo.urls??[]} />
-              </Grid>
-            </Grid>
+            {/* Description Section */}
+            <div className="project-card-description">
+              <p className="repo-description" style={{ color: theme.contrast_color }}>
+                {repo.description}
+              </p>
+            </div>
+
+            {/* Footer Section */}
+            <div className="project-card-footer">
+              <div className="repo-details">
+                <Grid container>
+                  <Grid item sm={6} xs={12}>
+                    <ProjectLanguages techStack={repo.techStack} />
+                  </Grid>
+                  <Grid item sm={6} xs={12}>
+                    <ProjectLinks urls={repo.urls ?? []} />
+                  </Grid>
+                </Grid>
+              </div>
+            </div>
           </div>
         </div>
       </Fade>

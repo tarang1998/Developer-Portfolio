@@ -99,7 +99,6 @@ export const projectData = {
       name: "JavaScript",
       iconifyClass: "simple-icons:javascript",
       style: {
-        backgroundColor: "#FFFFFF",
         color: "#F7DF1E",
       },
     },
