@@ -3,7 +3,7 @@
 
 }
 
-.educationHeadingImage > * {
+.educationHeadingImage>* {
   max-width: 100%;
   height: auto;
 }
@@ -60,18 +60,20 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px
-};
+}
+
+;
 
 .degreeCardImage {
   height: "auto",
 
 }
 
-.degreeCardImage:hover{
+.degreeCardImage:hover {
   color: "rgba(255, 255, 255, 1)" !important;
-} 
+}
 
-.degreeCardBodyHeader{
+.degreeCardBodyHeader {
   max-width: inherit;
   display: flex;
   border-radius: 7px 7px 0px 0px;
@@ -85,13 +87,13 @@
 
 .degreeCardBodyHeaderCardTitle {
   font-family: "Google Sans Medium";
-  font-size: 23px;
+  font-size: var(--textSize);
   margin-left: 10px;
 }
 
-.degreeCardBodyHeaderCardSubTitle{
+.degreeCardBodyHeaderCardSubTitle {
   font-family: "Google Sans Medium";
-  font-size: 20px;
+  font-size: var(--smallTextSize);
   margin-top: 7px;
   margin-bottom: 5px;
   margin-left: 10px;
@@ -103,20 +105,17 @@
 
 .duration {
   font-family: "Google Sans Regular";
-  font-size: 16px;
+  font-size: var(--smallTextSize);
   padding-right: 10px;
   float: right;
 }
 
 .degreeCardBodyContentLine {
-  font-size: 22px;
+  font-size: var(--textSize);
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Google Sans Regular";
 }
-
-
-
 
 @media (max-width: 1380px) {
   .educationHeadingTextTitle {
@@ -134,6 +133,22 @@
   .educationDegreesDivHeader {
     font-size: var(--subtitleSizeMaxWidth1380);
   }
+
+  .degreeCardBodyHeaderCardTitle {
+    font-size: var(--textSizeMaxWidth1380);
+  }
+
+  .degreeCardBodyHeaderCardSubTitle {
+    font-size: var(--smallTextSizeMaxWidth1380);
+  }
+
+  .duration {
+    font-size: var(--smallTextSizeMaxWidth1380);
+  }
+
+  .degreeCardBodyContentLine {
+    font-size: var(--textSizeMaxWidth1380);
+  }
 }
 
 @media (max-width: 1110px) {
@@ -142,7 +157,7 @@
   }
 
   .educationHeadingTextSubtitle {
-    font-size: var(--subtitleSizeSizeMaxWidth1100);
+    font-size: var(--subtitleSizeMaxWidth1100);
   }
 
   .educationHeadingTextDescription {
@@ -150,34 +165,50 @@
   }
 
   .educationDegreesDivHeader {
-    font-size: var(--subtitleSizeSizeMaxWidth1100);
+    font-size: var(--subtitleSizeMaxWidth1100);
+  }
+
+  .degreeCardBodyHeaderCardTitle {
+    font-size: var(--textSizeMaxWidth1100);
+  }
+
+  .degreeCardBodyHeaderCardSubTitle {
+    font-size: var(--smallTextSizeMaxWidth1100);
+  }
+
+  .duration {
+    font-size: var(--smallTextSizeMaxWidth1100);
+  }
+
+  .degreeCardBodyContentLine {
+    font-size: var(--textSizeMaxWidth1100);
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .educationHeadingTextTitle {
-    font-size: var(--titleSizeMaxWidth760);
+    font-size: var(--titleSizeMaxWidth768);
   }
 
   .educationHeadingTextSubtitle {
-    font-size: var(--subtitleSizeSizeMaxWidth760);
+    font-size: var(--subtitleSizeMaxWidth768);
   }
 
   .educationHeadingTextDescription {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .educationDegreesDivHeader {
-    font-size: var(--subtitleSizeSizeMaxWidth760);
+    font-size: var(--subtitleSizeMaxWidth768);
   }
 
   .degreeCard {
     flex-direction: column;
   }
 
-  .degreeCardImage{
-    width : 175px !important;
-    padding : 20px !important;
+  .degreeCardImage {
+    width: 175px !important;
+    padding: 20px !important;
     margin-bottom: 20px;
     margin-right: 0px !important;
   }
@@ -191,14 +222,14 @@
   }
 
   .degreeCardBodyHeaderCardTitle {
-    font-size: 20px;
+    font-size: var(--textSizeMaxWidth768);
   }
 
-  .degreeCardBodyHeaderCardSubTitle{
-    font-size: 18px;
+  .degreeCardBodyHeaderCardSubTitle {
+    font-size: var(--smallTextSizeMaxWidth768);
   }
 
-  .degreeCardBodyHeaderDuration{
+  .degreeCardBodyHeaderDuration {
     padding: 0;
     margin-left: 10px;
     margin-top: 10px;
@@ -210,12 +241,44 @@
     padding: 0px;
     margin: 0px;
     float: left;
+    font-size: var(--smallTextSizeMaxWidth768);
   }
 
   .degreeCardBodyContentLine {
-    font-size: 16px;
+    font-size: var(--textSizeMaxWidth768);
   }
-
-  
 }
 
+@media (max-width: 480px) {
+  .educationHeadingTextTitle {
+    font-size: var(--titleSizeMaxWidth480);
+  }
+
+  .educationHeadingTextSubtitle {
+    font-size: var(--subtitleSizeMaxWidth480);
+  }
+
+  .educationHeadingTextDescription {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .educationDegreesDivHeader {
+    font-size: var(--subtitleSizeMaxWidth480);
+  }
+
+  .degreeCardBodyHeaderCardTitle {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .degreeCardBodyHeaderCardSubTitle {
+    font-size: var(--smallTextSizeMaxWidth480);
+  }
+
+  .duration {
+    font-size: var(--smallTextSizeMaxWidth480);
+  }
+
+  .degreeCardBodyContentLine {
+    font-size: var(--textSizeMaxWidth480);
+  }
+}

@@ -1,92 +1,106 @@
 .programmingHeadingImage {
-    margin-top: 50px !important;
-  
-  }
-  
-  .programmingHeadingImage > * {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .programmingHeadingText {
-    text-align: start;
-    margin-top: 40px !important;
-  }
-  
+  margin-top: 50px !important;
+
+}
+
+.programmingHeadingImage>* {
+  max-width: 100%;
+  height: auto;
+}
+
+.programmingHeadingText {
+  text-align: start;
+  margin-top: 40px !important;
+}
+
+.programmingHeadingTextTitle {
+  font-size: var(--titleSize);
+  font-weight: 400;
+  font-family: var(--font-google-sans-medium);
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.programmingHeadingTextSubtitle {
+  font-size: var(--subtitleSize);
+  font-family: var(--font-google-sans-regular);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.programmingHeadingTextDescription {
+  font-size: var(--textSize);
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: var(--font-google-sans-medium);
+  text-align: center;
+}
+
+
+
+
+
+@media (max-width: 1380px) {
   .programmingHeadingTextTitle {
-    font-size: var(--titleSize);
-    font-weight: 400;
-    font-family: var(--font-google-sans-medium);
-    line-height: 1.1;
-    text-align: center;
-    margin-top: 80px;
+    font-size: var(--titleSizeMaxWidth1380);
   }
-  
+
   .programmingHeadingTextSubtitle {
-    font-size: var(--subtitleSize);
-    font-family: var(--font-google-sans-regular);
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: var(--subtitleSizeMaxWidth1380);
   }
-  
+
   .programmingHeadingTextDescription {
-    font-size: var(--textSize);
-    line-height: 30px;
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: var(--font-google-sans-medium);
-    text-align: center;
+    font-size: var(--textSizeMaxWidth1380);
   }
-  
-  
-  
-  
-  
-  @media (max-width: 1380px) {
-    .programmingHeadingTextTitle {
-      font-size: var(--titleSizeMaxWidth1380);
-    }
-  
-    .programmingHeadingTextSubtitle {
-      font-size: var(--subtitleSizeMaxWidth1380);
-    }
-  
-    .programmingHeadingTextDescription {
-      font-size: var(--textSizeMaxWidth1380);
-    }
-  
+
+}
+
+@media (max-width: 1110px) {
+  .programmingHeadingTextTitle {
+    font-size: var(--titleSizeMaxWidth1100);
   }
-  
-  @media (max-width: 1110px) {
-    .programmingHeadingTextTitle {
-      font-size: var(--titleSizeMaxWidth1100);
-    }
-  
-    .programmingHeadingTextSubtitle {
-      font-size: var(--subtitleSizeSizeMaxWidth1100);
-    }
-  
-    .programmingHeadingTextDescription {
-      font-size: var(--textSizeMaxWidth1100);
-    }
-  
+
+  .programmingHeadingTextSubtitle {
+    font-size: var(--subtitleSizeMaxWidth1100);
   }
-  
-  @media (max-width: 760px) {
-    .programmingHeadingTextTitle {
-      font-size: var(--titleSizeMaxWidth760);
-    }
-  
-    .programmingHeadingTextSubtitle {
-      font-size: var(--subtitleSizeSizeMaxWidth760);
-    }
-  
-    .programmingHeadingTextDescription {
-      font-size: var(--textSizeMaxWidth760);
-    }
-    
-    
+
+  .programmingHeadingTextDescription {
+    font-size: var(--textSizeMaxWidth1100);
   }
-  
-  
+
+}
+
+@media (max-width: 768px) {
+  .programmingHeadingTextTitle {
+    font-size: var(--titleSizeMaxWidth768);
+  }
+
+  .programmingHeadingTextSubtitle {
+    font-size: var(--subtitleSizeMaxWidth768);
+  }
+
+  .programmingHeadingTextDescription {
+    font-size: var(--textSizeMaxWidth768);
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .programmingHeadingTextTitle {
+    font-size: var(--titleSizeMaxWidth480);
+  }
+
+  .programmingHeadingTextSubtitle {
+    font-size: var(--subtitleSizeMaxWidth480);
+  }
+
+  .programmingHeadingTextDescription {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+
+}

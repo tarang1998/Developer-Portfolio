@@ -32,9 +32,9 @@ const Sidebar = (props) => {
 
     const icon =
         props.theme.name === "dark" ? (
-            <HiMoon size={24} color={"#A7A7A7"} />
+            <HiMoon className="theme-icon" color={"#A7A7A7"} />
         ) : (
-            <CgSun size={24} color={"#F9D784"} />
+            <CgSun className="theme-icon" color={"#F9D784"} />
         );
 
     const navItems = [
@@ -69,8 +69,8 @@ const Sidebar = (props) => {
                             >
                                 <div className="sidebar-icon">
                                     {React.cloneElement(item.icon, {
+                                        className: 'nav-icon',
                                         style: {
-                                            fontSize: '28px',
                                             color: pathName === item.path ? props.theme.accentColor : props.theme.contrast_color,
                                         }
                                     })}

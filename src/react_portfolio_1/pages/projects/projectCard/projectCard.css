@@ -44,25 +44,23 @@
   color: rgb(36, 41, 46);
   font-family: "Google Sans Regular";
   margin-bottom: 0.75rem;
-  font-size: 25px;
+  font-size: var(--subtitleSize);
   font-weight: 700;
   letter-spacing: -0.5px;
   overflow: hidden;
   margin: 0px;
 }
 
-
 .repo-star-svg {
   margin-right: 0.3rem;
 }
 
 .repo-subtitle {
-  font-size: 20px;
-
+  font-size: var(--textSize);
 }
 
 .repo-description {
-  font-size: 20px;
+  font-size: var(--textSize);
   word-wrap: break-word;
   text-align: left;
   display: -webkit-box;
@@ -97,14 +95,46 @@
   box-sizing: border-box;
 }
 
-
-@media (max-width: 768px) {
+/* Responsive text sizing */
+@media (max-width: 1380px) {
   .repo-name {
-    font-size: 16px;
+    font-size: var(--subtitleSizeMaxWidth1380);
+  }
+
+  .repo-subtitle {
+    font-size: var(--textSizeMaxWidth1380);
   }
 
   .repo-description {
-    font-size: 18px;
+    font-size: var(--textSizeMaxWidth1380);
+  }
+}
+
+@media (max-width: 1110px) {
+  .repo-name {
+    font-size: var(--subtitleSizeMaxWidth1100);
+  }
+
+  .repo-subtitle {
+    font-size: var(--textSizeMaxWidth1100);
+  }
+
+  .repo-description {
+    font-size: var(--textSizeMaxWidth1100);
+  }
+}
+
+@media (max-width: 768px) {
+  .repo-name {
+    font-size: var(--subtitleSizeMaxWidth768);
+  }
+
+  .repo-subtitle {
+    font-size: var(--textSizeMaxWidth768);
+  }
+
+  .repo-description {
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .repo-details {
@@ -112,6 +142,24 @@
   }
 
   .repo-creation-date {
-    font-size: 14px;
+    font-size: var(--smallTextSizeMaxWidth768);
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-name {
+    font-size: var(--subtitleSizeMaxWidth480);
+  }
+
+  .repo-subtitle {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .repo-description {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .repo-creation-date {
+    font-size: var(--smallTextSizeMaxWidth480);
   }
 }

@@ -64,23 +64,23 @@
   font-size: var(--textSize);
 }
 
-.experienceCardCompany > a {
+.experienceCardCompany>a {
   position: relative;
   color: #8c8c8c;
   text-decoration: none;
 }
 
-.experienceCardCompany > a:hover {
+.experienceCardCompany>a:hover {
   color: #8c8c8c;
 }
 
-.experienceCardCompany > a:hover:before {
+.experienceCardCompany>a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.experienceCardCompany > a:before {
+.experienceCardCompany>a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -102,6 +102,7 @@
   margin-right: 20px;
   font-family: var(--font-google-sans-regular);
   font-size: var(--textSize);
+  line-height: 1.6;
 }
 
 .experienceCardDescriptionElement {
@@ -124,6 +125,7 @@
 
   .experienceCardDescription {
     font-size: var(--textSizeMaxWidth1380);
+    line-height: 1.6;
   }
 
   .experienceCardDuration {
@@ -133,19 +135,20 @@
 
 @media (max-width: 1110px) {
   .experienceCardHeaderTitle {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
   }
 
   .experienceCardCompany {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
   }
 
   .experienceCardDescription {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
+    line-height: 1.6;
   }
 
   .experienceCardDuration {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
   }
 }
 
@@ -182,27 +185,47 @@
     margin-top: 20px;
     text-align: center;
   }
+
+  .experienceCardDescription {
+    text-align: left;
+    line-height: 1.6;
+  }
 }
 
-@media (max-width: 760px) {
-  .experienceCard {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-  }
+@media (max-width: 768px) {
   .experienceCardHeaderTitle {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .experienceCardCompany {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .experienceCardDescription {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
+    line-height: 1.6;
   }
 
   .experienceCardDuration {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
+  }
+}
+
+@media (max-width: 480px) {
+  .experienceCardHeaderTitle {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .experienceCardCompany {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .experienceCardDescription {
+    font-size: var(--textSizeMaxWidth480);
+    line-height: 1.6;
+  }
+
+  .experienceCardDuration {
+    font-size: var(--textSizeMaxWidth480);
   }
 }

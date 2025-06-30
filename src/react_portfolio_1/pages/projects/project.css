@@ -30,7 +30,7 @@
 }
 
 .projectHeadingTextDescription {
-  font-size: 22px;
+  font-size: var(--textSize);
   line-height: 30px;
   margin-top: 0px;
   margin-left: 20px;
@@ -58,7 +58,7 @@
   height: 50px;
   font-weight: bold;
   font-family: "Google Sans Regular";
-  font-size: 17px;
+  font-size: var(--buttonTextSize);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -80,6 +80,10 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
   }
+
+  .general-btn {
+    font-size: var(--buttonTextSizeMaxWidth1380);
+  }
 }
 
 @media (max-width: 1110px) {
@@ -88,7 +92,7 @@
   }
 
   .projectHeadingTextSubtitle {
-    font-size: var(--subtitleSizeSizeMaxWidth1100);
+    font-size: var(--subtitleSizeMaxWidth1100);
   }
 
   .projectHeadingTextDescription {
@@ -99,19 +103,23 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
   }
+
+  .general-btn {
+    font-size: var(--buttonTextSizeMaxWidth1100);
+  }
 }
 
 @media (max-width: 760px) {
   .projectHeadingTextTitle {
-    font-size: var(--titleSizeMaxWidth760);
+    font-size: var(--titleSizeMaxWidth768);
   }
 
   .projectHeadingTextSubtitle {
-    font-size: var(--subtitleSizeSizeMaxWidth760);
+    font-size: var(--subtitleSizeMaxWidth768);
   }
 
   .projectHeadingTextDescription {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .repo-cards-div-main {
@@ -119,12 +127,32 @@
     margin: 30px 10px 0 10px;
     gap: 1rem;
   }
+
+  .general-btn {
+    font-size: var(--buttonTextSizeMaxWidth768);
+  }
 }
 
 @media (max-width: 480px) {
+  .projectHeadingTextTitle {
+    font-size: var(--titleSizeMaxWidth480);
+  }
+
+  .projectHeadingTextSubtitle {
+    font-size: var(--subtitleSizeMaxWidth480);
+  }
+
+  .projectHeadingTextDescription {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
   .repo-cards-div-main {
     grid-template-columns: 1fr;
     margin: 20px 5px 0 5px;
     gap: 1rem;
+  }
+
+  .general-btn {
+    font-size: var(--buttonTextSizeMaxWidth480);
   }
 }

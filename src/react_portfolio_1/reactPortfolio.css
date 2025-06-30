@@ -15,36 +15,67 @@
 
   --font-google-sans-regular: "Google Sans Regular";
 
-  /* Max width */
+  /* Typography Scale - Desktop First (Increased for better readability) */
+  --titleSize: 85px;
+  --subtitleSize: 48px;
+  --textSize: 24px;
+  --smallTextSize: 18px;
+  --buttonTextSize: 20px;
 
-  --titleSize: 75px;
+  /* Icon Sizes (Proportionally increased) */
+  --iconSizeLarge: 60px;
+  --iconSizeMedium: 40px;
+  --iconSizeSmall: 28px;
+  --iconSizeNav: 32px;
 
-  --subtitleSize: 40px;
+  /* Responsive Breakpoints */
+  /* Large Desktop - 1380px and below */
+  --titleSizeMaxWidth1380: 72px;
+  --subtitleSizeMaxWidth1380: 42px;
+  --textSizeMaxWidth1380: 22px;
+  --smallTextSizeMaxWidth1380: 17px;
+  --buttonTextSizeMaxWidth1380: 18px;
+  --iconSizeLargeMaxWidth1380: 52px;
+  --iconSizeMediumMaxWidth1380: 35px;
+  --iconSizeSmallMaxWidth1380: 26px;
+  --iconSizeNavMaxWidth1380: 30px;
 
-  --textSize: 20px;
+  /* Medium Desktop - 1110px and below */
+  --titleSizeMaxWidth1100: 62px;
+  --subtitleSizeMaxWidth1100: 36px;
+  --textSizeMaxWidth1100: 20px;
+  --smallTextSizeMaxWidth1100: 16px;
+  --buttonTextSizeMaxWidth1100: 17px;
+  --iconSizeLargeMaxWidth1100: 48px;
+  --iconSizeMediumMaxWidth1100: 32px;
+  --iconSizeSmallMaxWidth1100: 24px;
+  --iconSizeNavMaxWidth1100: 28px;
 
-  /* Max width - 1380 */
+  /* Tablet - 768px and below */
+  --titleSizeMaxWidth768: 52px;
+  --subtitleSizeMaxWidth768: 30px;
+  --textSizeMaxWidth768: 18px;
+  --smallTextSizeMaxWidth768: 15px;
+  --buttonTextSizeMaxWidth768: 16px;
+  --iconSizeLargeMaxWidth768: 42px;
+  --iconSizeMediumMaxWidth768: 30px;
+  --iconSizeSmallMaxWidth768: 22px;
+  --iconSizeNavMaxWidth768: 26px;
 
-  --titleSizeMaxWidth1380: 65px;
+  /* Mobile - 480px and below */
+  --titleSizeMaxWidth480: 40px;
+  --subtitleSizeMaxWidth480: 24px;
+  --textSizeMaxWidth480: 16px;
+  --smallTextSizeMaxWidth480: 14px;
+  --buttonTextSizeMaxWidth480: 15px;
+  --iconSizeLargeMaxWidth480: 36px;
+  --iconSizeMediumMaxWidth480: 26px;
+  --iconSizeSmallMaxWidth480: 20px;
+  --iconSizeNavMaxWidth480: 24px;
 
-  --subtitleSizeMaxWidth1380: 35px;
-
-  --textSizeMaxWidth1380: 18px;
-
-  /* Max width - 1110 */
-
-  --titleSizeMaxWidth1100: 50px;
-
-  --subtitleSizeSizeMaxWidth1100: 30px;
-
-  --textSizeMaxWidth1100: 17px;
-
-  /* Max width - 760  */
-
+  /* Legacy variables for backward compatibility */
   --titleSizeMaxWidth760: 50px;
-
   --subtitleSizeSizeMaxWidth760: 30px;
-
   --textSizeMaxWidth760: 15px;
 }
 

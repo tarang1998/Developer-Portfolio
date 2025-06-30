@@ -40,6 +40,7 @@
   margin-right: 7px;
   text-align: left;
   font-size: var(--textSize);
+  font-weight: normal;
 }
 
 .problemCardDifficultText {
@@ -53,6 +54,7 @@
   position: relative;
   color: #8c8c8c;
   text-decoration: none;
+  font-weight: normal;
 }
 
 .problemCardHeaderTitle>a:hover {
@@ -100,55 +102,36 @@
 
 @media (max-width: 1110px) {
   .problemCardHeaderTitle {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
   }
 
   .problemCardDifficultText {
-    font-size: var(--textSizeMaxWidth1110);
+    font-size: var(--textSizeMaxWidth1100);
 
   }
 
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
   .problemCardHeaderTitle {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
   }
 
   .problemCardDifficultText {
-    font-size: var(--textSizeMaxWidth760);
+    font-size: var(--textSizeMaxWidth768);
 
   }
 
 }
 
-@media (max-width: 350px) {
-  /* .problemCard {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .problemCardHeaderDiv {
-    flex-direction: column;
-  }
-
-  .problemCardHeaderRightDiv {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .problemCardHeaderLeftDiv {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+@media (max-width: 480px) {
   .problemCardHeaderTitle {
-    text-align: center;
-  } */
+    font-size: var(--textSizeMaxWidth480);
+  }
 
-  /* .problemCardHeaderTitle {
-    font-size: 15px;
-  } */
+  .problemCardDifficultText {
+    font-size: var(--textSizeMaxWidth480);
+
+  }
 
 }

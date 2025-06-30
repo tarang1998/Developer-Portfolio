@@ -1,6 +1,4 @@
-
-
-.greeting-text-grid-div{
+.greeting-text-grid-div {
 
   /* display: inline; */
   margin-left: 50px !important;
@@ -16,7 +14,7 @@
   justify-content: center;
 } */
 
-.contact-platforms{
+.contact-platforms {
   margin-left: 0px;
 }
 
@@ -41,7 +39,7 @@
   font-size: var(--textSize);
 }
 
-.greeting-image-grid > * {
+.greeting-image-grid>* {
   max-width: 100%;
   height: auto;
 }
@@ -49,7 +47,7 @@
 .resume-button {
   margin-top: 30px;
   margin-left: 50px;
-  font-size: 25px;
+  font-size: var(--buttonTextSize);
   font-weight: 400;
   font-family: var(--font-google-sans-medium);
   background-color: var(--primaryColor);
@@ -75,16 +73,16 @@
   }
 
   .resume-button {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: 400;
-  font-family: var(--font-google-sans-medium);
-  background-color: var(--primaryColor);
-  color: var(--whiteColor);
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    margin-top: 30px;
+    font-size: var(--buttonTextSizeMaxWidth1380);
+    font-weight: 400;
+    font-family: var(--font-google-sans-medium);
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 1110px) {
@@ -94,11 +92,58 @@
   }
 
   .greeting-sub-title {
-    font-size: var(--subtitleSizeSizeMaxWidth1100);
+    font-size: var(--subtitleSizeMaxWidth1100);
     line-height: 40px;
   }
 
   .greeting-p {
     font-size: var(--textSizeMaxWidth1100);
+  }
+
+  .resume-button {
+    font-size: var(--buttonTextSizeMaxWidth1100);
+  }
+}
+
+@media (max-width: 768px) {
+  .greeting-title {
+    font-size: var(--titleSizeMaxWidth768);
+    line-height: 5px;
+  }
+
+  .greeting-sub-title {
+    font-size: var(--subtitleSizeMaxWidth768);
+    line-height: 35px;
+  }
+
+  .greeting-p {
+    font-size: var(--textSizeMaxWidth768);
+  }
+
+  .resume-button {
+    font-size: var(--buttonTextSizeMaxWidth768);
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting-title {
+    font-size: var(--titleSizeMaxWidth480);
+    line-height: 4px;
+  }
+
+  .greeting-sub-title {
+    font-size: var(--subtitleSizeMaxWidth480);
+    line-height: 30px;
+  }
+
+  .greeting-p {
+    font-size: var(--textSizeMaxWidth480);
+  }
+
+  .resume-button {
+    font-size: var(--buttonTextSizeMaxWidth480);
+    margin-left: 20px;
+    padding: 8px 16px;
   }
 }

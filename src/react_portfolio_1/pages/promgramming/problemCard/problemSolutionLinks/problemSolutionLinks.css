@@ -9,10 +9,72 @@
 .problem-links-inline {
     display: inline-block;
     margin-right: 5px;
-        size: 10px
-
 }
 
 .problem-links-inline .iconify.iconify--logos {
-    font-size: 20px !important;
+    font-size: var(--iconSizeSmall) !important;
+}
+
+.problem-links-inline .iconify.iconify--simple-icons {
+    font-size: var(--iconSizeSmall) !important;
+}
+
+.problem-links-inline .iconify.iconify--ant-design {
+    font-size: var(--iconSizeSmall) !important;
+}
+
+@media (max-width: 1380px) {
+    .problem-links-inline .iconify.iconify--logos {
+        font-size: var(--iconSizeSmallMaxWidth1380) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--simple-icons {
+        font-size: var(--iconSizeSmallMaxWidth1380) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--ant-design {
+        font-size: var(--iconSizeSmallMaxWidth1380) !important;
+    }
+}
+
+@media (max-width: 1110px) {
+    .problem-links-inline .iconify.iconify--logos {
+        font-size: var(--iconSizeSmallMaxWidth1100) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--simple-icons {
+        font-size: var(--iconSizeSmallMaxWidth1100) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--ant-design {
+        font-size: var(--iconSizeSmallMaxWidth1100) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .problem-links-inline .iconify.iconify--logos {
+        font-size: var(--iconSizeSmallMaxWidth768) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--simple-icons {
+        font-size: var(--iconSizeSmallMaxWidth768) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--ant-design {
+        font-size: var(--iconSizeSmallMaxWidth768) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-links-inline .iconify.iconify--logos {
+        font-size: var(--iconSizeSmallMaxWidth480) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--simple-icons {
+        font-size: var(--iconSizeSmallMaxWidth480) !important;
+    }
+
+    .problem-links-inline .iconify.iconify--ant-design {
+        font-size: var(--iconSizeSmallMaxWidth480) !important;
+    }
 }
