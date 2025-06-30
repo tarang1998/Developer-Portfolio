@@ -55,8 +55,14 @@
   .repo-star-svg {
     margin-right: 0.3rem;
   }
+
+  .repo-subtitle {
+    font-size: 20px;
+   
+  }
   
   .repo-description {
+    font-size: 20px;
     word-wrap: break-word;
     text-align: left;
     display: -webkit-box;
@@ -77,6 +83,8 @@
     margin-left: 0px;
     margin-right: auto;
   }
+
+
   
   @media (max-width: 768px) {
     .repo-name {
@@ -84,7 +92,7 @@
     }
   
     .repo-description {
-      font-size: 14px;
+      font-size: 18px;
     }
   
     .repo-details {

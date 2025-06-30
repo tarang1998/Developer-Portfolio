@@ -2,9 +2,7 @@ export const projectData = {
 
   title: "Projects",
   subtitle: "",
-
-  // description: `💻 Developed and maintained a diverse set of projects throughout my career, utilizing a broad spectrum of modern technologies and frameworks. My expertise includes building high-performance mobile applications with Flutter, designing cloud solutions on GCP and AWS, and crafting robust backend services using Node.js. `,
-description:'',
+  description: `💻 A collection of hands-on projects spanning cloud-native development, full-stack engineering, and generative AI. Technologies used across projects include AWS, GCP, Docker, Kubernetes, React, Flutter, LangChain, and more.`,
 
   platforms: {
     "GITHUB": {

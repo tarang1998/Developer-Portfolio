@@ -36,7 +36,7 @@ const Greetings = () => {
               <p className="greeting-sub-title">
                 <span>I'm </span>
                 <span>
-                  {personalData.name}.{" "}
+                  {personalData.name}.{" Great to have you here!"}
                 </span>
               </p>
               <p className="greeting-p">{introduction.aboutMe}</p>
@@ -44,7 +44,7 @@ const Greetings = () => {
 
               <ContactPlatFroms className="contact-platforms" contactPlatforms={contactPlatforms} />
 
-              <Button onClick={() => window.open(personalData.resumeLink, "_blank")}> Resume</Button>
+              <Button className = "resume-button" onClick={() => window.open(personalData.resumeLink, "_blank")}> Resume</Button>
 
             </div>
           </Grid>

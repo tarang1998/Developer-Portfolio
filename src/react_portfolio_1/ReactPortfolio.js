@@ -48,18 +48,18 @@ function ReactPortfolio(props) {
                     // 'overflow-y': 'scroll',
                   }}>
                   <Switch>
-                    {/* <Route path="/programming">
+                    <Route path="/programming">
                       <Programming theme={theme} />
-                    </Route> */}
+                    </Route>
                     <Route path="/projects">
                       <Projects theme={theme} />
                     </Route>
-                    {/* <Route path="/education">
+                    <Route path="/education">
                       <Education />
                     </Route>
                     <Route path="/workExperience">
                       <WorkExperience />
-                    </Route> */}
+                    </Route>
                     <Route path="/">
                       <Home />
                     </Route>

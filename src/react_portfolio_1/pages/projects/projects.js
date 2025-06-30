@@ -26,9 +26,10 @@ class Projects extends Component {
       'color': currentTheme.contrast_color,
       // backgroundColor: `${currentTheme.accentColor}`,
 
-      ":hover": {
-        boxShadow: `0 5px 15px ${currentTheme.accentColor}`,
-      },
+      // ":hover": {
+      //   boxShadow: `0 5px 15px ${currentTheme.accentColor}`,
+      // },
+      marginTop: '20px',
     });
 
 
@@ -83,7 +84,7 @@ class Projects extends Component {
           {...styles}
           className="general-btn"
           target="_blank"
-          rel="noopener noreferrer"
+          // rel="noopener noreferrer"
           href="https://github.com/tarang1998"
 
         >

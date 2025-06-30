@@ -1,7 +1,7 @@
 import { Facebook, LinkedIn, Twitter, GitHub, Instagram } from "@material-ui/icons";
 
 const personalData = {
-  name: "Tarang",
+  name: "Tarang Nair",
   title: "Software Developer",
   birthday: "3rd July 1998",
   contact: "9769712443",
@@ -105,7 +105,7 @@ const mediaLinks = {
 
 const introduction = {
   aboutMe:
-    "Grad@UMD | Software developer ",
+    "M.Eng in Software Engineering @ University Of Maryland, College Park and a dev with over 3 years of experience building scalable, high-performance full stack applications, and deploying cloud native solutions. Passionate about solving real-world problems through technology and automation. Feel free to reach out!",
 };
 
 

@@ -3,7 +3,7 @@
 }
 
 .skills-header {
-  font-size: var(--titleSize);
+  font-size: 70px;
   line-height: 1.1;
   font-family: var(--font-google-sans-regular);
   text-align: center;
@@ -41,7 +41,7 @@
 }
 
 .skills-section-heading {
-  font-size: var(--subtitleSize);
+  font-size: 60px;
   font-weight: 400;
   text-align: center;
   padding-bottom: 10px;
@@ -49,10 +49,24 @@
 }
 
 .skills-text {
-  font-size: var(--textSize) !important;
+  font-size: 24px !important;
   margin-top: 10px;
   text-align: center;
 }
+
+.iconify.iconify--skill-icons {
+    font-size: 50px !important;
+  }
+
+
+.iconify.iconify--logos {
+    font-size: 50px !important;
+  }
+
+.iconify.iconify--simple-icons {
+    font-size: 50px !important;
+  }
+
 
 @media (max-width: 1380px) {
   .skills-header {
@@ -68,6 +82,19 @@
     font-size: var(--textSizeMaxWidth1380) !important;
     margin-top: 10px;
     text-align: center;
+  }
+
+  .iconify.iconify--skill-icons {
+    font-size: 40px !important;
+  }
+
+
+.iconify.iconify--logos {
+    font-size: 40px !important;
+  }
+
+.iconify.iconify--simple-icons {
+    font-size: 40px !important;
   }
 }
 @media (max-width: 1110px) {
@@ -90,6 +117,19 @@
 
   .skills-section-image-div {
     order: 2;    
+  }
+
+  .iconify.iconify--skill-icons {
+    font-size: 30px !important;
+  }
+
+
+.iconify.iconify--logos {
+    font-size: 30px !important;
+  }
+
+.iconify.iconify--simple-icons {
+    font-size: 30px !important;
   }
 }
 

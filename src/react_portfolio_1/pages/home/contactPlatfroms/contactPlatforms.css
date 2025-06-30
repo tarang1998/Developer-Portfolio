@@ -14,5 +14,40 @@
     margin-bottom: 20px;
   }
 
-  
-  
+  .iconify.iconify--skill-icons {
+    font-size: 50px !important;
+  }
+
+
+  .iconify.iconify--logos {
+    font-size: 50px !important;
+  }
+
+
+  .contact-platforms-div{
+    padding-top: 50px !important;
+  }
+
+@media (max-width: 1380px) {
+  .iconify.iconify--skill-icons {
+    font-size: 40px !important;
+  }
+
+
+  .iconify.iconify--logos {
+    font-size: 40px !important;
+  }
+
+}
+
+@media (max-width: 1110px) {
+  .iconify.iconify--skill-icons {
+    font-size: 30px !important;
+  }
+
+
+  .iconify.iconify--logos {
+    font-size: 30px !important;
+  }
+
+}

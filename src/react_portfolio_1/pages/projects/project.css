@@ -31,7 +31,7 @@
 }
 
 .projectHeadingTextDescription {
-  font-size: var(--textSize);
+  font-size: 22px;
   line-height: 30px;
   margin-top: 0px;
   margin-left: 20px;
@@ -49,11 +49,12 @@
   margin-top: 60px;
 }
 
+
+
 .general-btn {
   text-decoration: none;
-  color: rgba(255, 255, 255, 1);
-  padding: 15px 15px;
-  margin-top: 50px !important;
+  color: rgb(71, 69, 69); 
+  margin-top: 10px !important;
   border-radius: 4px;
   border-width: 0px;
   width: 200px;

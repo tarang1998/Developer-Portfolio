@@ -9,4 +9,10 @@
 .problem-links-inline {
     display: inline-block;
     margin-right: 5px;
+        size: 10px
+
+}
+
+.problem-links-inline .iconify.iconify--logos {
+    font-size: 20px !important;
 }

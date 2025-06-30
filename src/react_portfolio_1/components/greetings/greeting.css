@@ -46,6 +46,19 @@
   height: auto;
 }
 
+.resume-button {
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: var(--font-google-sans-medium);
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media (max-width: 1380px) {
   .greeting-title {
     font-size: var(--titleSizeMaxWidth1380);
@@ -60,6 +73,18 @@
   .greeting-p {
     font-size: var(--textSizeMaxWidth1380);
   }
+
+  .resume-button {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--font-google-sans-medium);
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 }
 
 @media (max-width: 1110px) {

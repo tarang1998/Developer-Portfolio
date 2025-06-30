@@ -22,7 +22,7 @@ function Skills(){
                 <div className="skills-header-div">
                     <Fade bottom duration={2000} >
                         <h1 className="skills-header" style={{ color: currentTheme.contrast_color }}>
-                            What I’m into
+                            Current Focus
                         </h1>
                     </Fade>
 
@@ -100,7 +100,7 @@ function SkillSection() {
               // </div>
 
               <Grid container xs={12} style={{
-                'margin-top': '5px',
+                // 'margin-top': '5px',
               }}>
 
                 <Grid item xs={12} md={6} 
@@ -129,7 +129,7 @@ function SkillSection() {
                     <SoftwareSkill logos={skill.softwareSkills} />
                   </Fade>
 
-                  {/* <Fade right duration={2000}>
+                  <Fade right duration={2000}>
                     <div>
                       {skill.skills.map((skillSentence) => {
                         return (
@@ -141,7 +141,7 @@ function SkillSection() {
                         );
                       })}
                     </div>
-                  </Fade> */}
+                  </Fade>
                 </Grid>
 
                 
@@ -171,7 +171,7 @@ function SkillSection() {
                     <SoftwareSkill logos={skill.softwareSkills} />
                   </Fade>
 
-                  {/* <Fade left duration={2000}>
+                  <Fade left duration={2000}>
                     <div>
                       {skill.skills.map((skillSentence) => {
                         return (
@@ -183,7 +183,7 @@ function SkillSection() {
                         );
                       })}
                     </div>
-                  </Fade> */}
+                  </Fade>
                 </Grid>
 
                 <Grid item xs={12} md={6}>
