@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Fade } from "react-reveal";
 import { style } from "glamor";
 import "./projectCard.css"
@@ -9,6 +9,8 @@ import ProjectLinks from "./projectLinks/projectLinks";
 export default function ProjectCard({ repo, theme }) {
   const titleRef = useRef(null);
   const containerRef = useRef(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Check if title text overflows its container
@@ -47,6 +49,14 @@ export default function ProjectCard({ repo, theme }) {
     };
   }, [repo.name]);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   // function openRepoinNewTab(url) {
   //   var win = window.open(url, "_blank");
   //   win.focus();
@@ -76,6 +86,32 @@ export default function ProjectCard({ repo, theme }) {
           style={{ backgroundColor: theme.projectCard }}
         >
           <div className="project-card-container">
+            {/* Project Image Section */}
+            <div className="project-card-image-section">
+              <div className="project-image-container">
+                {!imageLoaded && !imageError && (
+                  <div className="project-image-skeleton">
+                    <div className="skeleton-loader"></div>
+                  </div>
+                )}
+                {imageError ? (
+                  <div className="project-image-placeholder">
+                    <div className="placeholder-icon">📱</div>
+                    <div className="placeholder-text">Project Preview</div>
+                  </div>
+                ) : (
+                  <img
+                    src={repo.imageUrl || "https://picsum.photos/400/200?random=" + repo.id}
+                    alt={`${repo.name} preview`}
+                    className={`project-image ${imageLoaded ? 'loaded' : ''}`}
+                    onLoad={handleImageLoad}
+                    onError={handleImageError}
+                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                  />
+                )}
+              </div>
+            </div>
+
             {/* Header Section */}
             <div className="project-card-header">
               <div ref={containerRef} className="repo-name-div">
