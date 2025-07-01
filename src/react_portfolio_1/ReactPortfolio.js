@@ -1,6 +1,7 @@
 import { Container, Grid } from "@material-ui/core";
 import Footer from "./components/footer/Footer";
 import Sidebar from "./components/sidebar/Sidebar";
+import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import WorkExperience from "./pages/workExperience/workExperience";
 import Home from "./pages/home/Home";
@@ -11,7 +12,7 @@ import Fade from 'react-reveal/Fade';
 import Education from "./pages/education/education";
 import Projects from "./pages/projects/projects";
 import Programming from "./pages/promgramming/programming";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Enhanced Scroll to top component with comprehensive scroll management
 function ScrollToTop() {
@@ -88,6 +89,24 @@ function ReactPortfolio(props) {
 
   const theme = props.theme
   const setTheme = props.setTheme
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Check on resize
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   // Additional scroll management at component level
   useEffect(() => {
@@ -110,6 +129,18 @@ function ReactPortfolio(props) {
     };
   }, []);
 
+  // Apply theme background color to body and html elements
+  useEffect(() => {
+    document.body.style.backgroundColor = theme.body_color;
+    document.documentElement.style.backgroundColor = theme.body_color;
+
+    return () => {
+      // Cleanup on unmount
+      document.body.style.backgroundColor = '';
+      document.documentElement.style.backgroundColor = '';
+    };
+  }, [theme.body_color]);
+
   return (
     <div style={{
       'background-color': theme.body_color,
@@ -117,9 +148,21 @@ function ReactPortfolio(props) {
     }}>
       <Router>
         <ScrollToTop />
-        <Sidebar theme={theme} setTheme={setTheme} />
 
-        <div className="main-content-wrapper" style={{ marginLeft: '80px' }}>
+        {/* Show Header on Mobile, Sidebar on Desktop */}
+        {isMobile ? (
+          <Header theme={theme} setTheme={setTheme} />
+        ) : (
+          <Sidebar theme={theme} setTheme={setTheme} />
+        )}
+
+        <div
+          className="main-content-wrapper"
+          style={{
+            marginLeft: isMobile ? '0px' : '80px',
+            marginTop: isMobile ? '15px' : '20px'
+          }}
+        >
           <Container maxWidth="xl" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>

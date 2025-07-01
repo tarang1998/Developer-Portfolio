@@ -76,7 +76,7 @@ const Header = (props) => {
     <Fade duration={1000} top>
       <Navbar
         //sticky="top" 
-        className="header container_shadow"
+        className={`header container_shadow ${props.theme.name === "light" ? "light-theme" : "dark-theme"}`}
         expand="lg"
         style={{
           'border-color': props.theme.contrast_color,
@@ -99,9 +99,8 @@ const Header = (props) => {
 
 
         <Navbar.Toggle style={{
-          //  'border-color':props.theme.contrast_color,
-          'background-color': props.theme.projectCard
-
+          'border-color': props.theme.contrast_color,
+          'background-color': 'transparent'
         }} />
 
         <Navbar.Collapse>
@@ -161,7 +160,7 @@ const Header = (props) => {
               style={headerlinkStyle}
             >
               Programming
-            </Nav.Link> 
+            </Nav.Link>
 
 
           </Nav>
