@@ -11,3 +11,18 @@
   margin-right: 20px;
   margin-bottom: 20px;
 }
+
+/* Mobile responsive spacing adjustments */
+@media (max-width: 768px) {
+  .software-skill-inline {
+    margin-right: 15px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-skill-inline {
+    margin-right: 10px;
+    margin-bottom: 8px;
+  }
+}

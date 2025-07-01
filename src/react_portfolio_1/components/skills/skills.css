@@ -67,6 +67,14 @@
   font-size: var(--iconSizeLarge) !important;
 }
 
+/* Skill section spacing controls */
+.skill-section-container {
+  margin-bottom: 80px;
+}
+
+.skill-section-container:last-child {
+  margin-bottom: 0;
+}
 
 @media (max-width: 1380px) {
   .skills-header {
@@ -132,6 +140,16 @@
   .iconify.iconify--simple-icons {
     font-size: var(--iconSizeLargeMaxWidth1100) !important;
   }
+
+  /* Tablet spacing adjustments for skill sections */
+  .skill-section-container {
+    margin-bottom: 60px;
+  }
+
+  .skills-section-text-div {
+    margin-left: 30px;
+    padding-top: 200px;
+  }
 }
 
 
@@ -167,6 +185,16 @@
   .iconify.iconify--simple-icons {
     font-size: var(--iconSizeLargeMaxWidth768) !important;
   }
+
+  /* Mobile spacing adjustments for skill sections */
+  .skill-section-container {
+    margin-bottom: 40px;
+  }
+
+  .skills-section-text-div {
+    margin-left: 20px;
+    padding-top: 150px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -194,5 +222,15 @@
 
   .iconify.iconify--simple-icons {
     font-size: var(--iconSizeLargeMaxWidth480) !important;
+  }
+
+  /* Small mobile spacing adjustments for skill sections */
+  .skill-section-container {
+    margin-bottom: 30px;
+  }
+
+  .skills-section-text-div {
+    margin-left: 15px;
+    padding-top: 100px;
   }
 }

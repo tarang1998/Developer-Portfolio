@@ -17,9 +17,16 @@ export default function ProjectCard({ repo, theme }) {
         const textElement = titleRef.current;
         const containerElement = containerRef.current;
 
+        // Temporarily set white-space to nowrap to check actual text width
+        const originalWhiteSpace = textElement.style.whiteSpace;
+        textElement.style.whiteSpace = 'nowrap';
+
         // Get the actual width of the text content
         const textWidth = textElement.scrollWidth;
         const containerWidth = containerElement.clientWidth;
+
+        // Restore original white-space
+        textElement.style.whiteSpace = originalWhiteSpace;
 
         const isOverflowing = textWidth > containerWidth;
 
