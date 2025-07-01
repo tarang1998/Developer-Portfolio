@@ -33,7 +33,7 @@ const Greetings = () => {
                 color: currentTheme.contrast_color
 
               }}>
-              <h1 className="greeting-title">{greetingData.title}</h1>
+              <h1 className="greeting-title" style={{ marginBottom: '50px' }}>{greetingData.title}</h1>
               <p className="greeting-sub-title">
                 <span>I'm </span>
                 <span>
