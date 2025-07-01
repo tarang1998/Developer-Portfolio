@@ -123,7 +123,7 @@ export const skills = {
       title: "Web Application Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡Developing dynamic, responsive, and scalable web applications using React, with deep expertise in React Hooks, and state management libraries such as Redux"
+        "⚡Proficient in developing dynamic, responsive, and scalable web applications using React, with deep expertise in React Hooks, and state management libraries such as Redux"
       ],
       softwareSkills: [
         {
@@ -205,7 +205,7 @@ export const skills = {
             color: "#0865A6",
           },
         },
-         {
+        {
           skillName: "GraphQL",
           iconifyIconId: "simple-icons:graphql",
           style: {
@@ -219,19 +219,19 @@ export const skills = {
             color: "#3776AB",
           },
         },
-        
-        
-      // {
-      //     skillName: "Git",
-      //     iconifyIconId: "simple-icons:git",
-      //     style: {
-      //       color: "#E94E32",
-      //     },
-      //   },
-      //   {
-      //     skillName: "GitHub",
-      //     iconifyIconId: "skill-icons:github-dark",
-      //   },
+
+
+        // {
+        //     skillName: "Git",
+        //     iconifyIconId: "simple-icons:git",
+        //     style: {
+        //       color: "#E94E32",
+        //     },
+        //   },
+        //   {
+        //     skillName: "GitHub",
+        //     iconifyIconId: "skill-icons:github-dark",
+        //   },
         //{
         // {
         //   skillName: "Wordpress",

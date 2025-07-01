@@ -43,7 +43,7 @@
 }
 
 .repo-name {
-  font-size: var(--subtitleSize);
+  font-size: calc(var(--subtitleSize) * 0.65);
   font-weight: 400;
   margin: 0;
   color: rgb(36, 41, 46);
@@ -57,7 +57,7 @@
 
 /* News ticker style scrolling animation */
 .repo-name.scroll {
-  animation: newsTicker 8s linear infinite;
+  animation: newsTicker 10s linear infinite;
   white-space: nowrap !important;
   overflow: visible;
   display: inline-block;
@@ -67,14 +67,6 @@
 @keyframes newsTicker {
   0% {
     transform: translateX(100%);
-  }
-
-  10% {
-    transform: translateX(0);
-  }
-
-  90% {
-    transform: translateX(calc(-100% + 100%));
   }
 
   100% {
@@ -183,7 +175,7 @@
   }
 
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth768);
+    font-size: calc(var(--subtitleSizeMaxWidth768) * 0.65);
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
@@ -192,7 +184,7 @@
   }
 
   .repo-name.scroll {
-    animation: newsTicker 12s linear infinite;
+    animation: newsTicker 10s linear infinite;
     white-space: nowrap !important;
     overflow: visible;
     display: inline-block;
@@ -248,7 +240,7 @@
   }
 
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth480);
+    font-size: calc(var(--subtitleSizeMaxWidth480) * 0.65);
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
@@ -326,7 +318,7 @@
 /* Responsive text sizing */
 @media (max-width: 1380px) {
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth1380);
+    font-size: calc(var(--subtitleSizeMaxWidth1380) * 0.65);
   }
 
   .repo-subtitle {
@@ -340,7 +332,7 @@
 
 @media (max-width: 1110px) {
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth1100);
+    font-size: calc(var(--subtitleSizeMaxWidth1100) * 0.65);
   }
 
   .repo-subtitle {
@@ -358,7 +350,7 @@
   }
 
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth768);
+    font-size: calc(var(--subtitleSizeMaxWidth768) * 0.65);
   }
 
   .repo-subtitle {
@@ -380,7 +372,7 @@
   }
 
   .repo-name {
-    font-size: var(--subtitleSizeMaxWidth480);
+    font-size: calc(var(--subtitleSizeMaxWidth480) * 0.65);
   }
 
   .repo-subtitle {

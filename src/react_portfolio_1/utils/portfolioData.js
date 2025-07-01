@@ -45,14 +45,14 @@ const contactPlatforms = [
   //   //   color: "#00000",
   //   // },
   // },
-  // {
-  //   platform: "Twitter",
-  //   link: 'https://twitter.com/tarang90564113',
-  //   iconifyIconId: "skill-icons:twitter",
-  //   // style: {
-  //   //   color: "#00000",
-  //   // },
-  // },
+  {
+    platform: "Twitter",
+    link: 'https://twitter.com/tarang90564113',
+    iconifyIconId: "skill-icons:twitter",
+    // style: {
+    //   color: "#00000",
+    // },
+  },
   // {
   //   platform: "GitLab",
   //   link: 'https://gitlab.com/tarangnair98',
