@@ -5,20 +5,110 @@ import Profile from "./components/profile/Profile";
 import WorkExperience from "./pages/workExperience/workExperience";
 import Home from "./pages/home/Home";
 
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 import "./reactPortfolio.css";
 import Fade from 'react-reveal/Fade';
 import Education from "./pages/education/education";
 import Projects from "./pages/projects/projects";
 import Programming from "./pages/promgramming/programming";
+import { useEffect } from "react";
 
+// Enhanced Scroll to top component with comprehensive scroll management
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
+  const scrollToTop = () => {
+    // Use multiple methods to ensure scrolling works
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Also try scrolling the main content area
+    const mainContent = document.querySelector('.main-content-wrapper');
+    if (mainContent) {
+      mainContent.scrollTop = 0;
+    }
+
+    // Force scroll on the app container
+    const appContainer = document.querySelector('.app');
+    if (appContainer) {
+      appContainer.scrollTop = 0;
+    }
+  };
+
+  useEffect(() => {
+    // Scroll to top on route change
+    scrollToTop();
+  }, [pathname]);
+
+  useEffect(() => {
+    // Scroll to top on initial page load
+    scrollToTop();
+
+    // Handle hash changes for hash router
+    const handleHashChange = () => {
+      scrollToTop();
+    };
+
+    // Handle popstate (browser back/forward)
+    const handlePopState = () => {
+      scrollToTop();
+    };
+
+    // Handle load event
+    const handleLoad = () => {
+      scrollToTop();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('load', handleLoad);
+
+    // Multiple timeouts to ensure it works
+    const timeoutId1 = setTimeout(scrollToTop, 50);
+    const timeoutId2 = setTimeout(scrollToTop, 200);
+    const timeoutId3 = setTimeout(scrollToTop, 500);
+    const timeoutId4 = setTimeout(scrollToTop, 1000);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(timeoutId1);
+      clearTimeout(timeoutId2);
+      clearTimeout(timeoutId3);
+      clearTimeout(timeoutId4);
+    };
+  }, []);
+
+  return null;
+}
 
 function ReactPortfolio(props) {
 
-
   const theme = props.theme
   const setTheme = props.setTheme
+
+  // Additional scroll management at component level
+  useEffect(() => {
+    const forceScrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    // Scroll immediately when component mounts
+    forceScrollToTop();
+
+    // Scroll after delays to handle any dynamic content
+    const timeouts = [50, 100, 200, 500, 1000].map(delay =>
+      setTimeout(forceScrollToTop, delay)
+    );
+
+    return () => {
+      timeouts.forEach(clearTimeout);
+    };
+  }, []);
 
   return (
     <div style={{
@@ -26,6 +116,7 @@ function ReactPortfolio(props) {
       // 'overflow':'auto',
     }}>
       <Router>
+        <ScrollToTop />
         <Sidebar theme={theme} setTheme={setTheme} />
 
         <div className="main-content-wrapper" style={{ marginLeft: '80px' }}>
