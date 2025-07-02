@@ -13,6 +13,7 @@ import Education from "./pages/education/education";
 import Projects from "./pages/projects/projects";
 import Programming from "./pages/promgramming/programming";
 import { useEffect, useState } from "react";
+import firebase from "../config/firebaseConfig";
 
 // Enhanced Scroll to top component with comprehensive scroll management
 function ScrollToTop() {
@@ -91,6 +92,57 @@ function ReactPortfolio(props) {
   const setTheme = props.setTheme
   const [isMobile, setIsMobile] = useState(false);
 
+  // Online users state
+  const [onlineCount, setOnlineCount] = useState(0);
+
+  // Firestore presence tracking
+  useEffect(() => {
+    const firestore = firebase.firestore();
+    const userId = firebase.firestore().collection('_').doc().id + '_' + Math.random().toString(36).substr(2, 9);
+    const userRef = firestore.collection('onlineUsers').doc(userId);
+    const now = firebase.firestore.FieldValue.serverTimestamp();
+
+    // Set initial presence
+    userRef.set({ lastActive: firebase.firestore.Timestamp.now() });
+
+    // Heartbeat: update timestamp every 20 seconds
+    const interval = setInterval(() => {
+      userRef.update({ lastActive: firebase.firestore.Timestamp.now() });
+    }, 20000);
+
+    // Remove on unload
+    const removeUser = () => userRef.delete();
+    window.addEventListener('beforeunload', removeUser);
+
+    return () => {
+      clearInterval(interval);
+      removeUser();
+      window.removeEventListener('beforeunload', removeUser);
+    };
+  }, []);
+
+  // Listen for online user count (active in last 30 seconds)
+  useEffect(() => {
+    const firestore = firebase.firestore();
+    const THIRTY_SECONDS = 30 * 1000;
+    const unsubscribe = firestore.collection('onlineUsers')
+      .onSnapshot(snapshot => {
+        const now = Date.now();
+        let count = 0;
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          if (data.lastActive && data.lastActive.toDate) {
+            const lastActive = data.lastActive.toDate().getTime();
+            if (now - lastActive < THIRTY_SECONDS) {
+              count++;
+            }
+          }
+        });
+        setOnlineCount(count);
+      });
+    return () => unsubscribe();
+  }, []);
+
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
@@ -153,7 +205,7 @@ function ReactPortfolio(props) {
         {isMobile ? (
           <Header theme={theme} setTheme={setTheme} />
         ) : (
-          <Sidebar theme={theme} setTheme={setTheme} />
+          <Sidebar theme={theme} setTheme={setTheme} onlineCount={onlineCount} />
         )}
 
         <div
@@ -164,6 +216,8 @@ function ReactPortfolio(props) {
           }}
         >
           <Container maxWidth="xl" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
+            {/* Online Users Display removed from here */}
+
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Fade duration={1000} bottom>
@@ -199,6 +253,7 @@ function ReactPortfolio(props) {
               </Grid>
             </Grid>
           </Container>
+          {/* Sticky Online Users Badge removed */}
         </div>
       </Router>
     </div>

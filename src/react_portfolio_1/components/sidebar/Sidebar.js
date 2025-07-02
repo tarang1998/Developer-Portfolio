@@ -5,7 +5,8 @@ import {
     WorkOutline,
     School,
     Code,
-    FolderOpen
+    FolderOpen,
+    Group
 } from "@material-ui/icons";
 import { CgSun } from "react-icons/cg/";
 import { HiMoon } from "react-icons/hi";
@@ -93,6 +94,34 @@ const Sidebar = (props) => {
                                 {icon}
                             </button>
                         </HeadShake>
+                    </div>
+
+                    {/* Online Users Info */}
+                    <div className="sidebar-online-users" style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: '18px',
+                        marginBottom: '8px',
+                        padding: 0,
+                        borderRadius: 0,
+                        background: 'none',
+                        color: props.theme.contrast_color,
+                        fontWeight: 500,
+                        fontSize: '1.02rem',
+                        fontFamily: 'var(--font-google-sans-medium, sans-serif)',
+                        minWidth: '0',
+                        width: '100%',
+                        boxShadow: 'none',
+                        gap: '2px',
+                        userSelect: 'none',
+                    }}>
+                        <Group style={{ fontSize: '1.35em', color: props.theme.contrast_color, marginBottom: 0 }} />
+                        <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '1em', letterSpacing: '0.1px', color: props.theme.contrast_color, marginTop: 2 }}>
+                            <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', marginRight: -1, background: '#27c93f', boxShadow: '0 0 2px #27c93f99' }}></span>
+                            {props.onlineCount} online
+                        </span>
                     </div>
                 </div>
             </div>

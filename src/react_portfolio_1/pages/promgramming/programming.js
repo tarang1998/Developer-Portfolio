@@ -58,9 +58,9 @@ class Programming extends Component {
 
         <Fade duration={2000} right>
 
-          <ProgrammingPatternAccordian 
-          programmingProblems = {this.props.programmingProblems}
-          programmingPatterns={programming['programmingPatterns']} />
+          <ProgrammingPatternAccordian
+            programmingProblems={this.props.programmingProblems}
+            programmingPatterns={programming['programmingPatterns']} />
 
         </Fade>
 
@@ -75,8 +75,8 @@ class Programming extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const problems  = 
-  state.firestore.ordered.programming ?? []
+  const problems =
+    state.firestore.ordered.programming ?? []
   // [
   //   {
   //     'type' : 'LINKED_LIST',
@@ -98,14 +98,14 @@ const mapStateToProps = (state) => {
 
   let programmingProblems = new Map();
 
-  problems.map((problem)=>{
+  problems.map((problem) => {
     const type = problem['type']
 
-    if(programmingProblems.has(type)){
-      programmingProblems.get(type).push(problem)  
+    if (programmingProblems.has(type)) {
+      programmingProblems.get(type).push(problem)
 
     }
-    else{
+    else {
       programmingProblems.set(type, [problem])
     }
 
@@ -113,14 +113,14 @@ const mapStateToProps = (state) => {
 
 
   return {
-    programmingProblems : programmingProblems,
+    programmingProblems: programmingProblems,
   }
 }
 
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'programming' , orderBy: ['priority', 'asc']},
+    { collection: 'programming', orderBy: ['priority', 'asc'] },
   ])
 )(Programming)
 
