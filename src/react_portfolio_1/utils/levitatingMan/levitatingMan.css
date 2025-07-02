@@ -3,6 +3,10 @@
   animation: eyeb 5s linear infinite;
 }
 
+.levitating-man {
+  margin-left: 70px;
+}
+
 @keyframes eyeb {
   0% {
     transform: translateY(-10);
