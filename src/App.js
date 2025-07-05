@@ -64,8 +64,8 @@ function App() {
 
   const [selectedTheme, setTheme] = useState(() => {
     // null coalescing 
-    // returning light theme by default 
-    return localStorage.getItem("theme") || "light"
+    // returning dark theme by default 
+    return localStorage.getItem("theme") || "dark"
 
   })
 

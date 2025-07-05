@@ -51,8 +51,8 @@ const Sidebar = (props) => {
             <div
                 className="sidebar container_shadow"
                 style={{
-                    'border-color': props.theme.contrast_color,
-                    'background-color': props.theme.body_color,
+                    borderColor: props.theme.contrast_color,
+                    backgroundColor: props.theme.body_color,
                 }}
             >
                 <div className="sidebar-content">

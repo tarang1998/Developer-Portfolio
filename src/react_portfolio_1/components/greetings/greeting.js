@@ -12,6 +12,7 @@ import { contactPlatforms } from "../../utils/portfolioData"
 import ContactPlatFroms from "../../pages/home/contactPlatfroms/contactPlatforms";
 import { Button } from "react-bootstrap";
 import { GetApp } from "@material-ui/icons";
+import { style } from "glamor";
 
 
 const Greetings = () => {
@@ -20,20 +21,23 @@ const Greetings = () => {
 
   return (
     <>
-      {/* GitHub Contribution Grid - full width above greeting */}
-      <div className="github-contribution-grid-wrapper">
-        <a href="https://github.com/tarang1998" target="_blank" rel="noopener noreferrer" style={{ width: '100%' }}>
-          <img
-            src="https://ghchart.rshah.org/tarang1998"
-            alt="GitHub Contribution Chart"
-            className="github-contribution-grid-img"
-            style={{
-              background: currentTheme.body_color,
-            }}
-          />
-        </a>
-      </div>
+
       <Fade duration={4000}>
+
+        {/* GitHub Contribution Grid - full width above greeting */}
+        <div className="github-contribution-grid-wrapper">
+          <a href="https://github.com/tarang1998" target="_blank" rel="noopener noreferrer" style={{ width: '100%' }}>
+            <img
+              src="https://ghchart.rshah.org/tarang1998"
+              alt="GitHub Contribution Chart"
+              className="github-contribution-grid-img"
+              style={{
+                background: currentTheme.body_color,
+              }}
+            />
+          </a>
+        </div>
+
         <Grid container className="greeting">
 
           <Grid item xs={12} md={5} lg={6} xl={6} className="greeting-text-grid">
@@ -57,6 +61,7 @@ const Greetings = () => {
               <Button
                 className="resume-button"
                 onClick={() => window.open(personalData.resumeLink, "_blank")}
+                style={{ color: currentTheme.contrast_color }}
               >
                 <GetApp style={{ marginRight: '8px', fontSize: '18px' }} />
                 Resume

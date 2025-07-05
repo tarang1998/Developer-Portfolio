@@ -1,12 +1,15 @@
 import React from "react";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import './home.css'
 import Greetings from "../../components/greetings/greeting";
 import Skills from "../../components/skills/skills";
+import CurrentWork from "../../components/currentWork/currentWork";
 
 
 const Home = () => {
-
+  const currentTheme = useContext(ThemeContext);
 
   return (
     <>
@@ -27,11 +30,10 @@ const Home = () => {
         </Grid>
       </Grid> */}
 
-      <Greetings/>
-      
+      <Greetings />
+      <CurrentWork />
 
-
-      <Skills/>
+      <Skills />
 
       {/* <Grid container className="section"></Grid>
 

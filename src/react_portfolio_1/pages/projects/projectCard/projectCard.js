@@ -6,7 +6,7 @@ import ProjectLanguages from "./projectLanguages/projectLanguages";
 import { Grid } from "@material-ui/core";
 import ProjectLinks from "./projectLinks/projectLinks";
 
-export default function ProjectCard({ repo, theme }) {
+export default function ProjectCard({ repo, theme, onClick }) {
   const titleRef = useRef(null);
   const containerRef = useRef(null);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -82,7 +82,7 @@ export default function ProjectCard({ repo, theme }) {
         <div
           {...styles}
           key={repo.id}
-          // onClick={() => openRepoinNewTab(repo.url)}
+          onClick={onClick}
           style={{ backgroundColor: theme.projectCard }}
         >
           <div className="project-card-container">
@@ -140,18 +140,21 @@ export default function ProjectCard({ repo, theme }) {
             </div>
 
             {/* Footer Section */}
-            <div className="project-card-footer">
-              <div className="repo-details">
-                <Grid container>
-                  <Grid item sm={6} xs={12}>
-                    <ProjectLanguages techStack={repo.techStack} />
+            {(repo.techStack?.length > 0 || repo.urls?.length > 0) && (
+              <div className="project-card-footer">
+                <div className="repo-details">
+                  <Grid container>
+                    <Grid item sm={6} xs={12}>
+                      <ProjectLanguages techStack={repo.techStack ?? []} />
+                    </Grid>
+                    <Grid item sm={6} xs={12}>
+                      <ProjectLinks urls={repo.urls ?? []} />
+                    </Grid>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
-                    <ProjectLinks urls={repo.urls ?? []} />
-                  </Grid>
-                </Grid>
+                </div>
               </div>
-            </div>
+            )}
+
           </div>
         </div>
       </Fade>

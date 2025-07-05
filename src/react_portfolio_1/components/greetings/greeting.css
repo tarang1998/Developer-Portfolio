@@ -87,7 +87,7 @@
 
 .resume-button:active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 15px rgba(153, 71, 200, 0.3);
 }
 
 .resume-button:focus {
@@ -98,15 +98,15 @@
 /* Add a subtle pulse animation */
 @keyframes pulse {
   0% {
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(174, 78, 209, 0.3);
   }
 
   50% {
-    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.5);
+    box-shadow: 0 4px 20px rgba(166, 21, 228, 0.5);
   }
 
   100% {
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(129, 60, 158, 0.3);
   }
 }
 
@@ -183,6 +183,7 @@
   max-width: 100%;
   border-radius: 16px;
   background: #fff;
+  padding-right: 100px;
   margin-left: 50px;
   margin-right: 0;
   margin-top: 24px;

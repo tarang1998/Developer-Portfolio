@@ -99,7 +99,7 @@ function SkillSection() {
             //   </div>
             // </div>
 
-            <Grid container xs={12} className="skill-section-container" style={{
+            <Grid container className="skill-section-container" style={{
               // 'margin-top': '5px',
             }}>
 
@@ -134,6 +134,7 @@ function SkillSection() {
                     {skill.skills.map((skillSentence) => {
                       return (
                         <p
+                          key={skillSentence}
                           className="skills-text"
                           style={{ color: currentTheme.contrast_color }}>
                           {skillSentence}
@@ -204,7 +205,7 @@ function SkillSection() {
           );
         }
       })}
-    </div>
+    </div >
   );
 }
 
