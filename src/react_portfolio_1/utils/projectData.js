@@ -169,6 +169,11 @@ export const projectData = {
 
     },
 
+    "SUPABASE": {
+      name: "Supabase",
+      iconifyClass: "simple-icons:supabase",
+    },
+
 
 
 
