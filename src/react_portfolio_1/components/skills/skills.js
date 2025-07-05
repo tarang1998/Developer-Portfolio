@@ -19,15 +19,18 @@ function Skills() {
   return (
     <>
       <div className="skills">
-        <div className="skills-header-div">
-          <Fade bottom duration={2000} >
-            <h1 className="skills-header" style={{ color: currentTheme.contrast_color }}>
-              Current Focus
-            </h1>
-          </Fade>
+        <Fade bottom duration={2000} >
+          <div className="skills-header-div">
 
-          <SkillSection />
-        </div>
+            <div className="expertise-indicator"></div>
+            <h1 className="skills-header" style={{ color: currentTheme.contrast_color }}>
+              My Expertise
+            </h1>
+
+          </div>
+        </Fade>
+        <SkillSection />
+
 
       </div>
     </>

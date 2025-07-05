@@ -4,8 +4,8 @@ export const skills = {
       title: "Cloud & Infra",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Deployed highly scalable, secure applications leveraging AWS and GCP services in high-traffic production environments.",
-        "⚡ Architected monitoring solutions for Kubernetes applications using AWS EKS, Docker, Prometheus, Grafana, and AWS CloudWatch, delivering real-time observability. ",
+        "⚡ Deployed multiple scalable, secure apps using AWS and GCP services in high-traffic production environments.",
+        // "⚡ Architected monitoring solutions for Kubernetes applications using AWS EKS, Prometheus, Grafana, and AWS CloudWatch, delivering real-time observability.",
 
       ],
       softwareSkills: [

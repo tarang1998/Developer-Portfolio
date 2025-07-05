@@ -1,12 +1,30 @@
 .skills-header-div {
-  margin-top: 60px;
+  margin-top: 80px;
+  padding-left: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
+.expertise-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e40d0d;
+  animation: pulse 1s infinite;
+}
+
+
 .skills-header {
-  font-size: var(--titleSize);
+  font-size: var(--textSize);
   line-height: 1.1;
   font-family: var(--font-google-sans-regular);
-  text-align: center;
+  font-weight: 600;
+  /* text-align: center; */
+
+  transition: all 0.3s ease;
+
 }
 
 /* 
@@ -76,9 +94,11 @@
   margin-bottom: 0;
 }
 
+
+
 @media (max-width: 1380px) {
   .skills-header {
-    font-size: var(--titleSizeMaxWidth1380);
+    font-size: var(--textSizeMaxWidth1380);
   }
 
   .skills-section-heading {
@@ -107,8 +127,14 @@
 }
 
 @media (max-width: 1110px) {
+
+  .skills-header-div {
+    margin-top: 80px;
+    padding-left: 47px;
+  }
+
   .skills-header {
-    font-size: var(--titleSizeMaxWidth1100);
+    font-size: var(--textSizeMaxWidth1100);
   }
 
   .skills-section-heading {
@@ -148,7 +174,7 @@
 
   .skills-section-text-div {
     margin-left: 30px;
-    padding-top: 200px;
+    padding-top: 120px;
   }
 }
 
@@ -160,13 +186,18 @@
 }
 
 @media (max-width: 768px) {
-  .skills-header {
-    font-size: var(--titleSizeMaxWidth768);
+
+  .skills-header-div {
+    margin-top: 100px !important;
+    padding-left: 40px;
+
   }
 
-  .skills-section-heading {
-    font-size: var(--subtitleSizeMaxWidth768);
+  .skills-header {
+    font-size: var(--textSizeMaxWidth768);
   }
+
+
 
   .skills-text {
     font-size: var(--textSizeMaxWidth768) !important;
@@ -193,14 +224,18 @@
 
   .skills-section-text-div {
     margin-left: 20px;
-    padding-top: 150px;
+    padding-top: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-header {
-    font-size: var(--titleSizeMaxWidth480);
+
+  .skills-header-div {
+    margin-top: 150px !important;
+    padding-left: 40px;
+
   }
+
 
   .skills-section-heading {
     font-size: var(--subtitleSizeMaxWidth480);

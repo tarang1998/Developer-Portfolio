@@ -182,9 +182,6 @@
         padding: 20px 24px;
     }
 
-    .currently-working-title {
-        font-size: var(--textSizeMaxWidth768);
-    }
 
     .currently-working-description {
         font-size: var(--textSizeMaxWidth768);
@@ -216,9 +213,7 @@
         padding: 16px 20px;
     }
 
-    .currently-working-title {
-        font-size: var(--subtitleSizeMaxWidth480);
-    }
+
 
     .currently-working-description {
         font-size: var(--textSizeMaxWidth480);
