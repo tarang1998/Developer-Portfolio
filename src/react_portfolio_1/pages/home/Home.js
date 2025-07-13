@@ -1,14 +1,18 @@
 import React from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { firestoreConnect } from "react-redux-firebase";
+import { connect } from "react-redux";
+import { compose } from "redux";
 
 import './home.css'
 import Greetings from "../../components/greetings/greeting";
 import Skills from "../../components/skills/skills";
 import CurrentWork from "../../components/currentWork/currentWork";
+import { personalData } from "../../utils/portfolioData";
 
 
-const Home = () => {
+const Home = ({ data }) => {
   const currentTheme = useContext(ThemeContext);
 
   return (
@@ -30,7 +34,7 @@ const Home = () => {
         </Grid>
       </Grid> */}
 
-      <Greetings />
+      <Greetings data={data} />
       <CurrentWork />
 
       <Skills />
@@ -42,4 +46,20 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  const personalData = state.firestore.ordered.personal ?? []
+
+  // Check if personalData is empty array, assign empty object if so
+  const data = personalData.length === 0 ? {} : personalData[0]
+
+  return {
+    data: data,
+  }
+}
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'personal' },
+  ])
+)(Home);

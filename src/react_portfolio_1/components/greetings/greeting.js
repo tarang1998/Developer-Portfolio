@@ -15,9 +15,10 @@ import { GetApp } from "@material-ui/icons";
 import { style } from "glamor";
 
 
-const Greetings = () => {
+const Greetings = (data) => {
 
   const currentTheme = useContext(ThemeContext)
+  const resumeLink = data.data.resumeLink ?? personalData.resumeLink
 
   return (
     <>
@@ -60,7 +61,7 @@ const Greetings = () => {
 
               <Button
                 className="resume-button"
-                onClick={() => window.open(personalData.resumeLink, "_blank")}
+                onClick={() => window.open(resumeLink, "_blank")}
                 style={{ color: currentTheme.contrast_color }}
               >
                 <GetApp style={{ marginRight: '8px', fontSize: '18px' }} />
