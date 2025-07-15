@@ -8,7 +8,7 @@ import { Nav, Navbar } from "react-bootstrap";
 
 import { NavLink, withRouter, useLocation } from "react-router-dom";
 
-import { HomeRounded } from "@material-ui/icons";
+import { HomeRounded, Terminal } from "@material-ui/icons";
 import { CgSun } from "react-icons/cg/";
 import { HiMoon } from "react-icons/hi";
 import styled from "styled-components";
@@ -85,7 +85,7 @@ const Header = (props) => {
       >
         {/* Home */}
 
-        <Nav.Link as={NavLink} to="/">
+        <Nav.Link as={NavLink} to="/home">
           <Navbar.Brand className="header_home" style={{
             // 'background-color':props.theme.contrast_color
           }}>
@@ -110,6 +110,14 @@ const Header = (props) => {
               as={NavLink}
               to="/"
               className={pathName == "/" ? "header_link_active" : "header_link"}
+              style={headerlinkStyle}
+            >
+              Terminal
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/home"
+              className={pathName == "/home" ? "header_link_active" : "header_link"}
               style={headerlinkStyle}
             >
               Home
