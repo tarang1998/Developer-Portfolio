@@ -57,10 +57,11 @@
 
 @media (max-width: 550px) {
     .terminal-banner {
-        font-size: 0.35em;
+        font-size: 0.3em;
 
     }
 }
+
 
 .terminal-history {
     flex: 1;

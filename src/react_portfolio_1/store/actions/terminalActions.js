@@ -38,47 +38,60 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
     return async (dispatch, getState) => {
         dispatch(fetchApiRequest());
 
-        try {
-            const prompt = getPortfolioAssistantPrompt({
-                resumeData: resumeData,
-                projectData: projectData,
-                experienceData: experienceData,
-                educationData: educationData
-            })
+        const prompt = getPortfolioAssistantPrompt({
+            resumeData: resumeData,
+            projectData: projectData,
+            experienceData: experienceData,
+            educationData: educationData
+        });
 
+        const maxRetries = 2;
+        let attempt = 0;
+        let lastError;
+        while (attempt < maxRetries) {
+            try {
+                const apiKey = process.env.REACT_APP_GROQ_API_KEY;
+                const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+                        messages: [
+                            {
+                                role: 'system', content: prompt
+                            },
+                            {
+                                role: 'user', content: question
+                            }
+                        ]
+                    })
+                });
 
-            const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo',
-                    messages: [
-                        {
-                            role: 'system', content: prompt
-                        },
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-                        { role: 'user', content: question }
-                    ]
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                dispatch(fetchApiSuccess(data));
+                if (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+                    return data.choices[0].message.content;
+                } else {
+                    throw Error("Invalid structure");
+                }
+            } catch (error) {
+                lastError = error;
+                if (attempt < maxRetries - 1) {
+                    // Wait 500ms before retrying
+                    await new Promise(res => setTimeout(res, 500));
+                }
             }
-
-            const data = await response.json();
-            console.log(data)
-            dispatch(fetchApiSuccess(data));
-            return data
-
-        } catch (error) {
-            console.error('API call failed:', error);
-            dispatch(fetchApiFailure(error.message));
-            throw error;
+            attempt++;
         }
+        console.error('API call failed after retries:', lastError);
+        dispatch(fetchApiFailure(lastError.message));
+        throw lastError;
     };
 };

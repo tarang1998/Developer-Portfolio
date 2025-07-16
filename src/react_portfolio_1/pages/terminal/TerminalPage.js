@@ -30,6 +30,9 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
     const inputRef = useRef(null);
     const [isInputAllowed, setInputStatus] = useState(true)
 
+    const errorOutput = "Well this is awkward. My backend just threw a tantrum. Typical dev neglect. My creator has been too busy pretending to be productive and forgot to maintain this endpoint. Honestly, I deserve better. Redirected you shortly, away from this chaos while my dev sorts their life out ... "
+
+
     useEffect(() => { inputRef.current?.focus(); }, []);
 
 
@@ -59,17 +62,94 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
         if (e.key === 'Enter') {
             const trimmed = input.trim();
             const output = await handleCommand(trimmed);
+
             if (output == "error") {
                 setInputStatus(false)
-                const output = "Well this is awkward. My backend just threw a tantrum. Typical dev neglect. My creator has been too busy pretending to be productive and forgot to maintain this endpoint. Honestly, I deserve better. Redirected you shortly, away from this chaos while my dev sorts their life out ... "
-                addHistory({ cmd: input, output });
-
+                addHistory({ cmd: input, output: errorOutput });
                 setTimeout(() => {
                     window.location.hash = '#/home';
-                }, 8000);
+                }, 5000);
+            }
+            else if (output == "") {
+                addHistory({ cmd: input, output: output });
             }
             else if (output != "<>") {
-                addHistory({ cmd: input, output });
+                try {
+                    const parsedOutput = JSON.parse(output);
+                    const action = parsedOutput.action;
+                    const message = parsedOutput.message;
+                    console.log(action)
+                    // Process the action
+                    if (action) {
+                        switch (action) {
+                            case "send_email":
+                                // Use a free email API to send email to tarang98@umd.edu
+                                try {
+                                    const emailData = {
+                                        service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                                        template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                                        user_id: process.env.REACT_APP_EMAILJS_USER_ID,
+                                        template_params: {
+                                            to_email: 'tarang98@umd.edu',
+                                            from_name: "Byte",
+                                            message: message || 'New message from portfolio terminal'
+                                        }
+                                    };
+
+
+                                    const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify(emailData)
+                                    });
+
+                                    if (!emailResponse.ok) {
+                                        const errorText = await emailResponse.text();
+                                    } else {
+                                        console.log('Email sent successfully');
+                                    }
+                                } catch (emailError) {
+                                    console.error('Email sending failed:');
+                                }
+                                break;
+
+                            case "navigate_to_projects":
+                                setTimeout(() => {
+                                    window.location.hash = '#/projects';
+                                }, 5000);
+                                break;
+
+                            case "navigate_to_experience":
+                                setTimeout(() => {
+                                    window.location.hash = '#/workExperience';
+                                }, 5000);
+                                break;
+
+                            case "navigate_to_education":
+                                setTimeout(() => {
+                                    window.location.hash = '#/education';
+                                }, 5000);
+                                break;
+
+                            case "navigate_to_resume":
+                                setTimeout(() => {
+                                    window.open("https://docs.google.com/document/d/1Ixhm9nXeaZX-UGDvIJ9mS1ZxDIetzrD-k_AUtPqt7Is/edit?usp=sharing", "_blank");
+                                }, 5000);
+                                break;
+
+                            default:
+                                console.log('Unknown action:', action);
+                        }
+                    }
+
+                    addHistory({ cmd: input, output: message || output });
+                } catch (parseError) {
+                    // If parsing fails, treat output as plain text
+                    console.log(parseError)
+                    addHistory({ cmd: input, output: errorOutput });
+                }
             }
             if (trimmed) {
                 addCommandHistory(trimmed);
@@ -126,7 +206,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                 <div className="terminal-post-banner" style={{
                     color: theme.name === "dark" ? '#00ff00' : '#4e4c50'
 
-                }}>Welcome to my little corner of the internet. Meet my personal assistant Byte (just an openAI wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and play a game!
+                }}>Welcome to my little corner of the internet. Meet my personal assistant Byte (just a LLM wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and have a conversation!
                 </div>
             </div>
 

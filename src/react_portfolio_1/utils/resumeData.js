@@ -10,7 +10,7 @@ transactions. Delivered transformative, high-impact solutions at FINRA, billingf
 observability, and slashing operational costs.
 
 WORK EXPERIENCE
-
+Currently - Unemployed, actively looking for a job
 FINRA Rockville, MD, USA
 Software Engineer May 2024 - Aug 2024
 • Supported the Chief Legal Office at FINRA, a leading regulator overseeing 3,400+ firms and 630,000+ brokers, delivering secure, efficient solutions for

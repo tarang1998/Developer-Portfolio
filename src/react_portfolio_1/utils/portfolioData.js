@@ -6,7 +6,7 @@ const personalData = {
   birthday: "3rd July 1998",
   contact: "9769712443",
   email: "tarangnair98@gmail.com",
-  resumeLink: "https://docs.google.com/document/d/1Ixhm9nXeaZX-UGDvIJ9mS1ZxDIetzrD-k_AUtPqt7Is/edit?usp=sharing"
+  resumeLink: "https://drive.google.com/file/d/1W4NL7bmhe6pFZFXSWSfFNbjd8QzJWeGe/view?usp=sharing"
 };
 
 const greetingData = {
