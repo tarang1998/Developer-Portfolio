@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './terminalPage.css';
 import { yellow } from '@material-ui/core/colors';
 import { connect } from 'react-redux';
-import { addHistory, addCommandHistory, clearHistory } from '../../store/actions/terminalActions';
+import { addHistory, addCommandHistory, clearHistory, fetchApiResponse } from '../../store/actions/terminalActions';
+import { withRouter } from 'react-router-dom';
 
 const COMMANDS = ['help', 'about', 'projects', 'resume', 'contact', 'clear'];
 const ASCII_BANNER = `
@@ -16,41 +17,50 @@ const ASCII_BANNER = `
 
 
 
-const TerminalPage = ({ theme, history, commandHistory, addHistory, addCommandHistory, clearHistory }) => {
+const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, addHistory, addCommandHistory, clearHistory, fetchApiResponse, history: routerHistory }) => {
     const [input, setInput] = useState(""); // for display
     const [historyIndex, setHistoryIndex] = useState(null);
     const inputRef = useRef(null);
+    const [isInputAllowed, setInputStatus] = useState(true)
 
     useEffect(() => { inputRef.current?.focus(); }, []);
 
-    const handleCommand = (cmd) => {
-        switch (cmd) {
-            case 'help':
-                return 'Available commands: help, about, projects, resume, contact, clear';
-            case 'about':
-                return 'Tarang Nair - Software Developer. Passionate about building scalable cloud-native applications.';
-            case 'projects':
-                return 'Visit /projects or use the GUI for a full list.';
-            case 'resume':
-                return 'Opening resume...';
-            case 'contact':
-                return 'Email: tarangnair98@gmail.com | LinkedIn: tarang-nair-752aa8179';
-            case 'clear':
-                clearHistory();
-                return '<>';
-            case "":
-                return '';
 
-            default:
-                return `Command not found: ${cmd} `;
+    const handleCommand = async (cmd) => {
+        if (cmd == "") {
+            return ""
         }
-    };
+        if (cmd == 'clear') {
+            clearHistory();
+            return "<>"
+        }
+        try {
+            const response = await fetchApiResponse(cmd);
+            return response
+        }
+        catch (error) {
+            return "error"
+        }
 
-    const handleInput = (e) => {
+
+
+    }
+
+
+    const handleInput = async (e) => {
         if (e.key === 'Enter') {
             const trimmed = input.trim();
-            const output = handleCommand(trimmed);
-            if (output != "<>") {
+            const output = await handleCommand(trimmed);
+            if (output == "error") {
+                setInputStatus(false)
+                const output = "Well this is awkward. My backend just threw a tantrum. Typical dev neglect. My creator has been too busy pretending to be productive and forgot to maintain this endpoint. Honestly, I deserve better. Redirected you shortly, away from this chaos while my dev sorts their life out ... "
+                addHistory({ cmd: input, output });
+
+                setTimeout(() => {
+                    window.location.hash = '#/home';
+                }, 8000);
+            }
+            else if (output != "<>") {
                 addHistory({ cmd: input, output });
             }
             if (trimmed) {
@@ -108,7 +118,7 @@ const TerminalPage = ({ theme, history, commandHistory, addHistory, addCommandHi
                 <div className="terminal-post-banner" style={{
                     color: theme.name === "dark" ? '#00ff00' : '#4e4c50'
 
-                }}>Welcome to my little corner of the internet. Meet my personal assistant—ask anything, drop an anonymous message, or just stick around and play a game!
+                }}>Welcome to my little corner of the internet. Meet my personal assistant (just an openAI wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and play a game!
                 </div>
             </div>
 
@@ -123,34 +133,52 @@ const TerminalPage = ({ theme, history, commandHistory, addHistory, addCommandHi
                     </div>
                 ))}
             </div>
-            <div className="terminal-input-line">
+            {isInputAllowed && (<div className="terminal-input-line">
                 <span className="terminal-prompt" style={{
                     color: theme.contrast_color
                 }}>tarang@dev-$</span>
                 <input
                     ref={inputRef}
                     className="terminal-input"
-                    style={{ color: theme.color === 'dark' ? "#00ff00" : "red" }}
                     value={input}
                     onChange={e => setInput(e.target.value)}
                     onKeyDown={handleInput}
                     autoFocus={true}
+                    disabled={apiLoading}
+                    style={{
+                        cursor: apiLoading ? 'not-allowed' : 'text',
+                        color: theme.name === 'dark' ? "#00ff00" : "red"
+                    }}
                 />
                 {/* <span className="terminal-cursor" /> */}
-            </div>
+            </div>)}
+
+            {apiLoading && (
+                <div style={{
+                    color: 'grey',
+                    fontSize: '14px',
+                    marginTop: '5px',
+                    fontStyle: 'italic'
+                }}>
+                    Thinking...
+                </div>
+            )}
         </div>
     );
 };
 
 const mapStateToProps = state => ({
     history: state.terminal.history,
-    commandHistory: state.terminal.commandHistory
+    commandHistory: state.terminal.commandHistory,
+    apiLoading: state.terminal.apiLoading,
+    apiError: state.terminal.apiError
 });
 
 const mapDispatchToProps = {
     addHistory,
     addCommandHistory,
-    clearHistory
+    clearHistory,
+    fetchApiResponse
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TerminalPage); 
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TerminalPage));

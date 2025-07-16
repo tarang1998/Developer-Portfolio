@@ -1,6 +1,8 @@
 const initialState = {
     history: [],
-    commandHistory: []
+    commandHistory: [],
+    apiLoading: false,
+    apiError: null
 };
 
 const terminalReducer = (state = initialState, action) => {
@@ -25,6 +27,24 @@ const terminalReducer = (state = initialState, action) => {
             return {
                 ...state,
                 commandHistory: []
+            };
+        case 'FETCH_API_REQUEST':
+            return {
+                ...state,
+                apiLoading: true,
+                apiError: null
+            };
+        case 'FETCH_API_SUCCESS':
+            return {
+                ...state,
+                apiLoading: false,
+                apiError: null
+            };
+        case 'FETCH_API_FAILURE':
+            return {
+                ...state,
+                apiLoading: false,
+                apiError: action.payload
             };
         default:
             return state;
