@@ -3,7 +3,14 @@ import './terminalPage.css';
 import { yellow } from '@material-ui/core/colors';
 import { connect } from 'react-redux';
 import { addHistory, addCommandHistory, clearHistory, fetchApiResponse } from '../../store/actions/terminalActions';
-import { withRouter } from 'react-router-dom';
+import { resumeData } from '../../utils/resumeData'
+import { experience } from '../../utils/experienceData';
+import { education } from '../../utils/educationData';
+import { compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
+
+
+
 
 const COMMANDS = ['help', 'about', 'projects', 'resume', 'contact', 'clear'];
 const ASCII_BANNER = `
@@ -17,7 +24,7 @@ const ASCII_BANNER = `
 
 
 
-const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, addHistory, addCommandHistory, clearHistory, fetchApiResponse, history: routerHistory }) => {
+const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, projectData, addHistory, addCommandHistory, clearHistory, fetchApiResponse, history: routerHistory }) => {
     const [input, setInput] = useState(""); // for display
     const [historyIndex, setHistoryIndex] = useState(null);
     const inputRef = useRef(null);
@@ -35,10 +42,11 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, ad
             return "<>"
         }
         try {
-            const response = await fetchApiResponse(cmd);
+            const response = await fetchApiResponse(resumeData, projectData, education, experience, cmd);
             return response
         }
         catch (error) {
+            console.log(error)
             return "error"
         }
 
@@ -118,7 +126,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, ad
                 <div className="terminal-post-banner" style={{
                     color: theme.name === "dark" ? '#00ff00' : '#4e4c50'
 
-                }}>Welcome to my little corner of the internet. Meet my personal assistant (just an openAI wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and play a game!
+                }}>Welcome to my little corner of the internet. Meet my personal assistant Byte (just an openAI wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and play a game!
                 </div>
             </div>
 
@@ -171,7 +179,8 @@ const mapStateToProps = state => ({
     history: state.terminal.history,
     commandHistory: state.terminal.commandHistory,
     apiLoading: state.terminal.apiLoading,
-    apiError: state.terminal.apiError
+    apiError: state.terminal.apiError,
+    projectData: state.firestore.ordered.projects ?? []
 });
 
 const mapDispatchToProps = {
@@ -181,4 +190,12 @@ const mapDispatchToProps = {
     fetchApiResponse
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TerminalPage));
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    firestoreConnect([
+        { collection: 'projects', orderBy: ['priority', 'asc'] },
+    ])
+)(TerminalPage)
+
+

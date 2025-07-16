@@ -45,7 +45,6 @@ const CurrentWork = ({ currentProjects }) => {
                                 };
 
                                 const githubURL = project.urls.find(url => url.name == "GITHUB").url
-                                console.log(githubURL)
                                 return <Grid container className="current-works">
 
                                     <Grid item xs={12} md={5} lg={6} xl={6} >

@@ -17,26 +17,26 @@ function ExperienceAccordion(props) {
 
   return (
     <div className="experienceAccordian" style={{
-    
+
       'border-width': '0.1px',
       'border-style': 'groove',
       'border-color': currentTheme.contrast_color,
-      'border-radius' : '5px'
+      'border-radius': '5px'
 
     }}>
 
-    <ThemeProvider theme={currentTheme.name === "light" ? LightTheme : DarkTheme}>
+      <ThemeProvider theme={currentTheme.name === "light" ? LightTheme : DarkTheme}>
 
         <Accordion onChange={({ expanded }) => console.log(expanded)}>
           {props.sections.map((section) => {
             return (
               <Panel
-              expanded= {section["isExpanded"]}
+                expanded={false}
                 className="accordianPanel"
                 title={section["title"]}
                 key={section["title"]}
               >
-                
+
                 {section["experiences"].map((experience) => {
                   return (
                     <ExperienceCard experience={experience} theme={currentTheme} />
@@ -47,7 +47,7 @@ function ExperienceAccordion(props) {
           })}
         </Accordion>
 
-    </ThemeProvider>
+      </ThemeProvider>
 
     </div>
   );

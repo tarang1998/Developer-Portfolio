@@ -1,3 +1,5 @@
+import { getPortfolioAssistantPrompt } from "../../utils/promptData"
+
 export const addHistory = (entry) => ({
     type: 'ADD_HISTORY',
     payload: entry
@@ -32,20 +34,35 @@ export const fetchApiFailure = (error) => ({
 });
 
 // Thunk action for API calls
-export const fetchApiResponse = (command, query) => {
+export const fetchApiResponse = (resumeData, projectData, educationData, experienceData, question) => {
     return async (dispatch, getState) => {
         dispatch(fetchApiRequest());
 
         try {
-            // Replace this URL with your Google Cloud Function endpoint
-            const response = await fetch('YOUR_GOOGLE_CLOUD_FUNCTION_URL', {
+            const prompt = getPortfolioAssistantPrompt({
+                resumeData: resumeData,
+                projectData: projectData,
+                experienceData: experienceData,
+                educationData: educationData
+            })
+
+
+            const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
-                    command: command,
-                    query: query
+                    model: 'gpt-3.5-turbo',
+                    messages: [
+                        {
+                            role: 'system', content: prompt
+                        },
+
+                        { role: 'user', content: question }
+                    ]
                 })
             });
 
@@ -54,8 +71,10 @@ export const fetchApiResponse = (command, query) => {
             }
 
             const data = await response.json();
+            console.log(data)
             dispatch(fetchApiSuccess(data));
-            return data;
+            return data
+
         } catch (error) {
             console.error('API call failed:', error);
             dispatch(fetchApiFailure(error.message));
