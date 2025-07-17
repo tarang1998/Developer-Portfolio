@@ -14,6 +14,7 @@ import Projects from "./pages/projects/projects";
 import Programming from "./pages/promgramming/programming";
 import { useEffect, useState } from "react";
 import firebase from "../config/firebaseConfig";
+import TerminalPage from "./pages/terminal/TerminalPage";
 
 // Enhanced Scroll to top component with comprehensive scroll management
 function ScrollToTop() {
@@ -240,7 +241,10 @@ function ReactPortfolio(props) {
                       <Route path="/workExperience">
                         <WorkExperience />
                       </Route>
-                      <Route path="/">
+                      <Route exact path="/">
+                        <TerminalPage theme={theme} />
+                      </Route>
+                      <Route path="/home">
                         <Home />
                       </Route>
                     </Switch>

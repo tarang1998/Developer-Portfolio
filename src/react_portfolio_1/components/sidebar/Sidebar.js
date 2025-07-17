@@ -6,7 +6,8 @@ import {
     School,
     Code,
     FolderOpen,
-    Group
+    Group,
+    Computer
 } from "@material-ui/icons";
 import { CgSun } from "react-icons/cg/";
 import { HiMoon } from "react-icons/hi";
@@ -39,7 +40,8 @@ const Sidebar = (props) => {
         );
 
     const navItems = [
-        { path: "/", icon: <HomeRounded />, label: "Home" },
+        { path: "/", icon: <Computer />, label: "Terminal" },
+        { path: "/home", icon: <HomeRounded />, label: "Home" },
         { path: "/projects", icon: <FolderOpen />, label: "Projects" },
         { path: "/workExperience", icon: <WorkOutline />, label: "Experience" },
         { path: "/education", icon: <School />, label: "Education" },

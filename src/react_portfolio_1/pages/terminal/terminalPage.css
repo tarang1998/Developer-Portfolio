@@ -1,0 +1,113 @@
+.terminal-root {
+
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    padding: 0;
+    margin: 0;
+
+}
+
+.banner {
+    margin-bottom: 2rem;
+}
+
+.terminal-banner {
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 1.1em;
+    line-height: 1.1;
+    white-space: pre;
+    overflow-x: auto !important;
+    max-width: 100vw;
+    display: flex;
+    overflow: auto;
+}
+
+.terminal-post-banner {}
+
+@media (max-width: 1100px) {
+    .terminal-banner {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 950px) {
+    .terminal-banner {
+        font-size: 0.8em;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .terminal-banner {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 800px) {
+    .terminal-banner {
+        font-size: 0.70em;
+    }
+}
+
+@media (max-width: 650px) {
+    .terminal-banner {
+        font-size: 0.55em;
+
+    }
+}
+
+@media (max-width: 550px) {
+    .terminal-banner {
+        font-size: 0.3em;
+
+    }
+}
+
+
+.terminal-history {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.terminal-prompt {
+    font-weight: 700;
+}
+
+.terminal-output {
+    color: #b0b0b0;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    width: 100%;
+    margin-left: 5px
+}
+
+.terminal-cursor {
+    width: 10px;
+    height: 1.2em;
+    background: #00ff00;
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
