@@ -75,9 +75,8 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
             }
             else if (output != "<>") {
                 try {
-                    const parsedOutput = JSON.parse(output);
-                    const action = parsedOutput.action;
-                    const message = parsedOutput.message;
+                    const action = output.action;
+                    const message = output.message;
                     console.log(action)
                     // Process the action
                     if (action) {
@@ -135,7 +134,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
 
                             case "navigate_to_resume":
                                 setTimeout(() => {
-                                    window.open("https://docs.google.com/document/d/1Ixhm9nXeaZX-UGDvIJ9mS1ZxDIetzrD-k_AUtPqt7Is/edit?usp=sharing", "_blank");
+                                    window.open("https://drive.google.com/file/d/1W4NL7bmhe6pFZFXSWSfFNbjd8QzJWeGe/view?usp=sharing", "_blank");
                                 }, 5000);
                                 break;
 

@@ -1,4 +1,3 @@
-import { getPortfolioAssistantPrompt } from "../../utils/promptData"
 
 export const addHistory = (entry) => ({
     type: 'ADD_HISTORY',
@@ -38,35 +37,22 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
     return async (dispatch, getState) => {
         dispatch(fetchApiRequest());
 
-        const prompt = getPortfolioAssistantPrompt({
-            resumeData: resumeData,
-            projectData: projectData,
-            experienceData: experienceData,
-            educationData: educationData
-        });
-
         const maxRetries = 2;
         let attempt = 0;
         let lastError;
         while (attempt < maxRetries) {
             try {
-                const apiKey = process.env.REACT_APP_GROQ_API_KEY;
-                const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+                const response = await fetch('https://vercel-dev-portfolio-api.vercel.app/api/ask', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${apiKey}`
                     },
                     body: JSON.stringify({
-                        model: 'meta-llama/llama-4-scout-17b-16e-instruct',
-                        messages: [
-                            {
-                                role: 'system', content: prompt
-                            },
-                            {
-                                role: 'user', content: question
-                            }
-                        ]
+                        resumeData: resumeData,
+                        projectData: projectData,
+                        experienceData: experienceData,
+                        educationData: educationData,
+                        question: question
                     })
                 });
 
@@ -76,8 +62,19 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
 
                 const data = await response.json();
                 dispatch(fetchApiSuccess(data));
-                if (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
-                    return data.choices[0].message.content;
+                if (data && data.content) {
+                    const content = data.content;
+                    if (typeof content === 'string') {
+                        try {
+                            const parsed = JSON.parse(content);
+                            return parsed;
+                        } catch (parseError) {
+                            // If parsing fails, return the original string
+                            return content;
+                        }
+                    }
+                    // If content is already an object, just return it
+                    return content;
                 } else {
                     throw Error("Invalid structure");
                 }
