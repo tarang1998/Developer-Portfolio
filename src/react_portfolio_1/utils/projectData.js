@@ -190,6 +190,33 @@ export const projectData = {
       iconifyClass: "simple-icons:supabase",
     },
 
+    "PYTHON": {
+      name: "Python",
+      iconifyClass: "devicon:python",
+
+    },
+
+    "LANGCHAIN": {
+      name: "LangChain",
+      iconifyClass: "simple-icons:langchain",
+
+    },
+    "FLASK": {
+      name: "Flask",
+      iconifyClass: "skill-icons:flask-light",
+
+    },
+    "OPENAI": {
+      name: "OpenAI",
+      iconifyClass: "simple-icons:openai",
+
+    },
+    "PINECONE": {
+      name: "Pinecone",
+      iconifyClass: "logos:pinecone-icon",
+
+    },
+
 
 
 
