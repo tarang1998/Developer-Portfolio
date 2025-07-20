@@ -48,14 +48,16 @@ export const projectData = {
       name: "Cloud Infra",
       type: "CLOUD_INFRA"
 
-    }, {
-      name: 'AI',
-      type: "AI"
     },
     {
       name: "Full stack",
       type: "FULL_STACK"
-    }
+    },
+    {
+      name: 'AI',
+      type: "AI"
+    },
+
   ],
 
   techStacks: {

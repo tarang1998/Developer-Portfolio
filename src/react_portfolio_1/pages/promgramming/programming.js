@@ -37,11 +37,11 @@ class Programming extends Component {
                 {programming['title']}
               </div>
 
-              {/* <div className="programmingHeadingTextDescription">
+              <div className="programmingHeadingTextDescription">
                 {programming['description']}
-              </div> */}
+              </div>
 
-              <ProgrammingPlatForms programmingPlatforms={programming.competitiveProgrammingPlatforms} />
+              {/* <ProgrammingPlatForms programmingPlatforms={programming.competitiveProgrammingPlatforms} /> */}
 
 
             </Grid>

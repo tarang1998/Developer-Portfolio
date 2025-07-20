@@ -161,13 +161,13 @@ const Header = (props) => {
 
             <Nav.Link
               as={NavLink}
-              to="/programming"
+              to="/notes"
               className={
                 pathName == "/programming" ? "header_link_active" : "header_link"
               }
               style={headerlinkStyle}
             >
-              Programming
+              Notes
             </Nav.Link>
 
 

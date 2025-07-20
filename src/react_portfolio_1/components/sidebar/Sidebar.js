@@ -45,7 +45,7 @@ const Sidebar = (props) => {
         { path: "/projects", icon: <FolderOpen />, label: "Projects" },
         { path: "/workExperience", icon: <WorkOutline />, label: "Experience" },
         { path: "/education", icon: <School />, label: "Education" },
-        { path: "/programming", icon: <Code />, label: "Programming" },
+        { path: "/notes", icon: <Code />, label: "Notes" },
     ];
 
     return (

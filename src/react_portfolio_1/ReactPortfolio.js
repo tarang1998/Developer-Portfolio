@@ -229,7 +229,7 @@ function ReactPortfolio(props) {
                       // 'overflow-y': 'scroll',
                     }}>
                     <Switch>
-                      <Route path="/programming">
+                      <Route path="/notes">
                         <Programming theme={theme} />
                       </Route>
                       <Route path="/projects">

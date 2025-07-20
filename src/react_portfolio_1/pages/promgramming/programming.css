@@ -32,7 +32,7 @@
 .programmingHeadingTextDescription {
   font-size: var(--textSize);
   line-height: 30px;
-  margin-top: 0px;
+  margin-top: 60px;
   margin-left: 20px;
   margin-right: 20px;
   font-family: var(--font-google-sans-medium);

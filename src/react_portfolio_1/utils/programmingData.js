@@ -1,8 +1,8 @@
 export const programming = {
 
-  title: "Programming",
+  title: "Notes",
 
-  description: `🤓 A competitive programming enthusiast`,
+  description: `A carefully curated collection of resources and code snippets covering fundamental topics in Computer Science, designed to serve as a quick reference, ideal for revising core concepts, exploring algorithms, understanding system design patterns, and preparing for technical interviews or competitive programming.`,
 
   programmingPatterns: [
     {
@@ -34,7 +34,7 @@ export const programming = {
       pattern: "LINKED_LIST",
       name: "Linked List"
 
-    }, 
+    },
     {
       pattern: "HASH_MAPS",
       name: "Hash Maps"
@@ -91,18 +91,18 @@ export const programming = {
     },
   ],
 
-  problemDifficulty : {
-    "EASY" : {
-      name : "Easy",
-      color : "#2ECC71"
+  problemDifficulty: {
+    "EASY": {
+      name: "Easy",
+      color: "#2ECC71"
     },
-    "MEDIUM" : {
-      name : "Medium",
-      color : "#F39C12"
+    "MEDIUM": {
+      name: "Medium",
+      color: "#F39C12"
     },
-    "HARD" : {
-      name : "Hard",
-      color : "#E74C3C"
+    "HARD": {
+      name: "Hard",
+      color: "#E74C3C"
     }
   },
 
@@ -150,6 +150,14 @@ export const programming = {
       },
     },
   },
+
+  notesPages: [
+    {
+      name: "Algorithm & Data Structures",
+      imageUrl: "",
+      description: "Covers topics such as Arrays, Linked Lists, Trees, Graphs, Dynamic Programming, Sorting, Searching, Bit Manipulation, and more. Each topic includes problem statements, solutions (often in Python, Java, or C++), and links to external resources."
+    }
+  ],
 
 
   competitiveProgrammingPlatforms: [
