@@ -64,6 +64,56 @@
   cursor: pointer;
 }
 
+.project-labels-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  margin-left: 20px;
+}
+
+.project-label-btn {
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 8px 22px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: none;
+  margin-bottom: 4px;
+}
+
+.project-label-btn.selected {
+  background: var(--contrast-color, #222);
+  color: var(--body-color, #fff);
+  border-color: var(--contrast-color, #222);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.project-label-btn:not(.selected):hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--contrast-color, #222);
+  border-color: var(--contrast-color, #222);
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .project-labels-row {
+    gap: 8px;
+  }
+
+  .project-label-btn {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 1380px) {
   .projectHeadingTextTitle {
     font-size: var(--titleSizeMaxWidth1380);

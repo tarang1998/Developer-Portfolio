@@ -42,6 +42,22 @@ export const projectData = {
 
   },
 
+
+  projectTypes: [
+    {
+      name: "Cloud Infra",
+      type: "CLOUD_INFRA"
+
+    }, {
+      name: 'AI',
+      type: "AI"
+    },
+    {
+      name: "Full stack",
+      type: "FULL_STACK"
+    }
+  ],
+
   techStacks: {
     'FLUTTER': {
       name: "Flutter",
