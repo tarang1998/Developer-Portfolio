@@ -39,6 +39,134 @@
   text-align: center;
 }
 
+/* Notes Cards Section */
+.notes-cards-section {
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.notes-card {
+  border: 2px solid;
+  border-radius: 12px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 140px;
+  max-height: 500px;
+  height: 100%;
+}
+
+.notes-card-image {
+  margin-right: 16px;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notes-card-image img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  border-radius: 8px;
+}
+
+.notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-width: 3px;
+}
+
+.notes-card-content {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.notes-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.notes-card-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.notes-card-arrow {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.notes-card:hover .notes-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notes-cards-section {
+    margin-top: 100px;
+    padding: 0 16px;
+  }
+
+  .notes-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .notes-card-title {
+    font-size: 1.2rem;
+  }
+
+  .notes-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .notes-card-image {
+    display: none;
+  }
+
+  .notes-cards-section {
+    margin-top: 100px;
+    padding: 0 12px;
+  }
+
+  .notes-card {
+    padding: 16px;
+    min-height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .notes-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .notes-card-description {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 

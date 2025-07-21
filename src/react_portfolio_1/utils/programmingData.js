@@ -154,9 +154,29 @@ export const programming = {
   notesPages: [
     {
       name: "Algorithm & Data Structures",
-      imageUrl: "",
+      imageUrl: "https://miro.medium.com/v2/resize:fit:1200/1*BtuHe_nyh2RqVnVsCHr4Hw.png",
+      route: "/algorithms-datastructures",
       description: "Covers topics such as Arrays, Linked Lists, Trees, Graphs, Dynamic Programming, Sorting, Searching, Bit Manipulation, and more. Each topic includes problem statements, solutions (often in Python, Java, or C++), and links to external resources."
-    }
+    },
+    {
+      name: "Low Level System Design",
+      imageUrl: "https://miro.medium.com/v2/resize:fit:1200/0*IlFsEmd2uccyUGcp",
+      route: "",
+      description: "Comprehensive coverage of low-level system design concepts including Object-Oriented Design, Design Patterns, SOLID Principles, UML Diagrams, Database Design, and API Design. Each topic includes real-world examples, best practices, and implementation guidelines for building scalable and maintainable systems."
+    },
+    {
+      name: "High Level System Design",
+      imageUrl: "https://www.designgurus.io/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fdesigngurus-prod.appspot.com%2Fo%2FproductImages%252FGrokkingSystemDesignFundamentals%252Fimg%3A554da31-0bfe-17f2-a1d-ac14af2376f6.png%3Fgeneration%3D1681218762369296%26alt%3Dmedia&w=3840&q=75&dpl=dpl_Byhp4YRJ2MqY2QWszDpsoeXpepsW",
+      route: "",
+      description: "Explore high-level system design concepts including Distributed Systems, Microservices Architecture, Load Balancing, Caching Strategies, Database Scaling, Message Queues, and System Reliability. Learn to design large-scale systems that can handle millions of users with high availability and performance."
+    },
+    {
+      name: "AI-ML-DL",
+      imageUrl: "https://computerhistory.org/wp-content/uploads/2020/08/Neural_network_example_crop.png",
+      route: "",
+      description: "Comprehensive guide to Artificial Intelligence, Machine Learning, and Deep Learning concepts. Covers Supervised/Unsupervised Learning, Neural Networks, Computer Vision, Natural Language Processing, Reinforcement Learning, and practical implementations using popular frameworks like TensorFlow and PyTorch."
+    },
+
   ],
 
 
@@ -170,15 +190,15 @@ export const programming = {
         color: "#f3b548",
       },
     },
-    // {
-    //   platform: "Hackerrank",
-    //   name: "HACKER_RANK",
-    //   link: "https://www.hackerrank.com/tarang98?hr_r=1",
-    //   iconifyIconId: "simple-icons:hackerrank",
-    //   style: {
-    //     color: "#49b463",
-    //   },
-    // },
+    {
+      platform: "Hackerrank",
+      name: "HACKER_RANK",
+      link: "https://www.hackerrank.com/tarang98?hr_r=1",
+      iconifyIconId: "simple-icons:hackerrank",
+      style: {
+        color: "#49b463",
+      },
+    },
     // {
     //   platform: "Codechef",
     //   name: "CODE_CHEF",
@@ -188,15 +208,15 @@ export const programming = {
     //     color: "#9ea39f",
     //   },
     // },
-    // {
-    //   platform: "GFG",
-    //   name: "GFG",
-    //   link: "https://auth.geeksforgeeks.org/user/tarangnair98/practice/",
-    //   iconifyIconId: "simple-icons:geeksforgeeks",
-    //   style: {
-    //     color: "#157d2f",
-    //   },
-    // },
+    {
+      platform: "GFG",
+      name: "GFG",
+      link: "https://auth.geeksforgeeks.org/user/tarangnair98/practice/",
+      iconifyIconId: "simple-icons:geeksforgeeks",
+      style: {
+        color: "#157d2f",
+      },
+    },
 
 
   ],

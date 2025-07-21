@@ -15,6 +15,7 @@ import Programming from "./pages/promgramming/programming";
 import { useEffect, useState } from "react";
 import firebase from "../config/firebaseConfig";
 import TerminalPage from "./pages/terminal/TerminalPage";
+import AlgorithmsDataStructures from "./pages/algorithms-datastructures/algorithms-datastructures";
 
 // Enhanced Scroll to top component with comprehensive scroll management
 function ScrollToTop() {
@@ -231,6 +232,9 @@ function ReactPortfolio(props) {
                     <Switch>
                       <Route path="/notes">
                         <Programming theme={theme} />
+                      </Route>
+                      <Route path="/algorithms-datastructures">
+                        <AlgorithmsDataStructures theme={theme} />
                       </Route>
                       <Route path="/projects">
                         <Projects theme={theme} />
