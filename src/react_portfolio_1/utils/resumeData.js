@@ -2,19 +2,18 @@ export const resumeData = {
     data: `
 
 TARANG NAIR
-Chantilly, VA, +1 571-385-5625, tarang98@umd.edu, linkedin.com/in/tarangnair1998, github.com/tarang1998, tarangnair.com
+Washington, DC, +1 571-385-5625, tarang98@umd.edu, linkedin.com/in/tarangnair1998, github.com/tarang1998, tarangnair.com
 
-Software engineer with over 3 years of deep experience in architecting scalable, high-performance systems for early-stage ed-tech and retail startups. Expert in
-solving complex challenges in cloud architecture, automation, and distributed system, powering applications that seamlessly handle millions of users and
-transactions. Delivered transformative, high-impact solutions at FINRA, billingfast, and myracle.io, driving significant performance optimizations, enhancing
-observability, and slashing operational costs.
+Software engineer with 3+ years of experience delivering production-grade systems at FINRA, and architecting scalable, 
+high-performance systems for early-stage startups like \href{https://www.billingfast.com/}{billingfast}, and \href{http://myracle.io}{myracle.io} capable of handling millions of users and transactions. 
+Built high-performance APIs, AI pipelines, automated cloud workflows, and drove major performance gains, boosted observability, cut operational costs by designing secure, cost-efficient systems on AWS, GCP, and modern dev stacks.
 
 WORK EXPERIENCE
 Currently - Unemployed, actively looking for a job
 FINRA Rockville, MD, USA
 Software Engineer May 2024 - Aug 2024
-• Supported the Chief Legal Office at FINRA, a leading regulator overseeing 3,400+ firms and 630,000+ brokers, delivering secure, efficient solutions for
-compliance operations.
+• Delivered secure, automated solutions for the Chief Legal Office at FINRA, enhancing compliance workflows and operational efficiency for a regulatory
+body overseeing 3,400+ firms and 630,000+ brokers.
 • Architected ServiceNow integration with AWS, Python, and JavaScript, automating workflows to cut manual effort by 15 hours/week and reduce data
 inconsistencies by 10%, enhancing CLO compliance efficiency.
 • Engineered a Python-based automated secret key retrieval system, eliminating manual rotation, achieving 100% error reduction, and strengthening security
@@ -23,13 +22,12 @@ for FINRA’s critical systems.
 Billingfast Mumbai, India
 Software Development Engineer - 2 Dec 2022 - Sept 2023
 • Built and scaled a global inventory and billing platform adopted by 35,000+ businesses, leading development of a scalable cross-platform solution with
-Flutter and React, and building backend services in TypeScript and Python on GCP to support a 3M+ SKU FMCG database with high performance and
+Flutter and React, and building backend services with Typescript and Python, on GCP to support a 3M+ SKU FMCG database with high performance and
 seamless integration.
-• Engineered a custom-domain web-store hosting platform on Google Cloud by architecting Compute Engine managed instance groups with autoscaling
-(CPU/request/scheduled), HTTP(S) load balancing with SSL termination, enabling retailers to deploy global branded e-commerce sites and drive 30%
-sales uplift.
+• Engineered a custom-domain web-store hosting platform on Google Cloud by architecting Compute Engine managed instance groups with autoscaling,
+HTTP(S) load balancing with SSL termination, enabling retailers to deploy global branded e-commerce sites and drive 30% sales uplift.
 • Implemented high-availability APIs in Python & TypeScript using GCP Cloud Functions following Clean Architecture principles and RESTful best
-practices, improving response times to ensure sub-200ms latency under peak loads.
+practices, improving response times to ensure sub-300ms latency under peak loads
 
 myracle.io Berlin, Germany
 Software Development Engineer - 2 May 2020 - Sept 2022
@@ -51,6 +49,19 @@ confidence through enhanced CI/CD collaboration.
 
 
 PROJECTS
+
+Billing Fast
+Devised an inventory and billing management application using React and Flutter for retail stores, 
+managing an FMCG database with 2M+ products, enhancing operations and inventory tracking efficiency.
+Optimized front-end performance, by proper state management and implementing lazy loading, reducing load times by 15
+
+Myracle.io
+Built a XR application with React, and Flutter, featuring gamified 3D science experiments, enhancing user engagement. 
+Designed and implemented reusable UI components, improving code maintainability.
+
+Promexa
+Created a Flutter-based exam conduction app with GCP services, featuring AI supervision and offline support to improve exam security. 
+Strategized a process to capture and compress exam videos offline, ensuring smooth upload upon reconnection for AI-driven video analysis.
 
 E-Commerce Application with AWS (Github | (Architecture)
 • Built a scalable, secure PHP/MySQL e-commerce platform on AWS using Auto Scaling, WAF, CloudWatch, and RDS, to handled 100% traffic growth with
