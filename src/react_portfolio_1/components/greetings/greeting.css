@@ -201,6 +201,11 @@
 }
 
 @media (max-width: 1024px) {
+
+  .greeting-text-grid-div {
+  margin-left: 0px !important;
+  padding: 20px;
+} 
   .github-contribution-grid-img {
     display: none;
   }
@@ -245,6 +250,9 @@
 }
 
 @media (max-width: 480px) {
+  
+ 
+
   .greeting-title {
     font-size: var(--titleSizeMaxWidth480);
     line-height: 4px;
