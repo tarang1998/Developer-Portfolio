@@ -23,6 +23,31 @@
 
 .terminal-post-banner {}
 
+.terminal-output {
+    margin-left: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    line-height: 1.5;
+}
+
+.terminal-output .bold-text {
+    font-weight: bold;
+    color: #00a2ff; /* Gold color for bold text */
+    display: inline-block;
+}
+
+.terminal-output div {
+    margin: 4px 0;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Style for list items that start with a dash */
+.terminal-output div:not(:first-child):not(:last-child) {
+    padding-left: 20px;
+}
+
 @media (max-width: 1100px) {
     .terminal-banner {
         font-size: 0.95em;

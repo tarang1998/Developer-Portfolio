@@ -24,6 +24,17 @@ const ASCII_BANNER = `
 
 
 
+const formatMessage = (message) => {
+    // Split the message by newlines
+    return message.split('\\n').map((line, index) => {
+        // Replace bold text markers with styled spans
+        const formattedLine = line.replace(/\*\*(.*?)\*\*/g, (match, text) => {
+            return `<span class="bold-text">${text}</span>`;
+        });
+        return `<div key={${index}}>${formattedLine}</div>`;
+    }).join('');
+};
+
 const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, projectData, addHistory, addCommandHistory, clearHistory, fetchApiResponse, history: routerHistory }) => {
     const [input, setInput] = useState(""); // for display
     const [historyIndex, setHistoryIndex] = useState(null);
@@ -78,6 +89,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                 try {
                     const action = output.action;
                     const message = output.message;
+                    const formattedMessage = formatMessage(message);
                     console.log(action)
                     // Process the action
                     if (action) {
@@ -85,25 +97,25 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                             case "navigate_to_projects":
                                 setTimeout(() => {
                                     window.location.hash = '#/projects';
-                                }, 5000);
+                                }, 1000);
                                 break;
 
                             case "navigate_to_experience":
                                 setTimeout(() => {
                                     window.location.hash = '#/workExperience';
-                                }, 5000);
+                                }, 1000);
                                 break;
 
                             case "navigate_to_education":
                                 setTimeout(() => {
                                     window.location.hash = '#/education';
-                                }, 5000);
+                                }, 1000);
                                 break;
 
                             case "navigate_to_resume":
                                 setTimeout(() => {
                                     window.open("https://drive.google.com/file/d/1W4NL7bmhe6pFZFXSWSfFNbjd8QzJWeGe/view?usp=sharing", "_blank");
-                                }, 5000);
+                                }, 1000);
                                 break;
 
                             default:
@@ -111,7 +123,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                         }
                     }
 
-                    addHistory({ cmd: input, output: message || output });
+                    addHistory({ cmd: input, output: formattedMessage || output });
                 } catch (parseError) {
                     // If parsing fails, treat output as plain text
                     console.log(parseError)
@@ -184,7 +196,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                         <span className="terminal-prompt" style={{
                             color: theme.contrast_color
                         }}>tarang@dev-$ <span style={{ color: theme.name === "dark" ? 'yellow' : "blue" }}>{item.cmd}</span></span>
-                        <div className="terminal-output" >{item.output}</div>
+                        <div className="terminal-output" dangerouslySetInnerHTML={{ __html: item.output }}></div>
                     </div>
                 ))}
             </div>
