@@ -45,6 +45,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
             return "<>"
         }
         try {
+            console.log(projectData)
             const response = await fetchApiResponse(resumeData, projectData, education, experience, cmd);
             return response
         }
@@ -81,39 +82,6 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                     // Process the action
                     if (action) {
                         switch (action) {
-                            case "send_email":
-                                // Use a free email API to send email to tarang98@umd.edu
-                                try {
-                                    const emailData = {
-                                        service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                                        template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                                        user_id: process.env.REACT_APP_EMAILJS_USER_ID,
-                                        template_params: {
-                                            to_email: 'tarang98@umd.edu',
-                                            from_name: "Byte",
-                                            message: message || 'New message from portfolio terminal'
-                                        }
-                                    };
-
-
-                                    const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                        },
-                                        body: JSON.stringify(emailData)
-                                    });
-
-                                    if (!emailResponse.ok) {
-                                        const errorText = await emailResponse.text();
-                                    } else {
-                                        console.log('Email sent successfully');
-                                    }
-                                } catch (emailError) {
-                                    console.error('Email sending failed:');
-                                }
-                                break;
-
                             case "navigate_to_projects":
                                 setTimeout(() => {
                                     window.location.hash = '#/projects';

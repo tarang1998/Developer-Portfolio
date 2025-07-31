@@ -52,7 +52,8 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
                         projectData: projectData,
                         experienceData: experienceData,
                         educationData: educationData,
-                        question: question
+                        question: question,
+                        sessionId: getState().terminal.sessionId
                     })
                 });
 
@@ -64,6 +65,10 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
                 dispatch(fetchApiSuccess(data));
                 if (data && data.content) {
                     const content = data.content;
+                    // Store the sessionId if it exists
+                    if (data.sessionId) {
+                        dispatch(fetchApiSuccess({ sessionId: data.sessionId }));
+                    }
                     if (typeof content === 'string') {
                         try {
                             const parsed = JSON.parse(content);
