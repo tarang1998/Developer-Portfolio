@@ -3,8 +3,7 @@ export const education = {
   title: "Education",
   subtitle: "Qualifications and Certificates",
 
-  description: `🤓 Currently a Grad pursuing Software Engineering @ UMD `,
-  description1: `📜 Completed my Bachelors in Computer Engineering in 2020 from Mumbai University`,
+  description: `Graduate student at the University of Maryland, specializing in software engineering. Focused on building scalable systems, with coursework in cloud computing, deep learning, and modern software architecture. `,
 
   degrees: [
     {

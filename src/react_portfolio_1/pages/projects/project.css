@@ -1,5 +1,6 @@
 .projectHeadingImage {
   margin-top: 50px !important;
+  margin-left: 60px !important;
 }
 
 .projectHeadingImage>* {
@@ -11,6 +12,8 @@
 .projectHeadingText {
   text-align: start;
   margin-top: 40px !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .projectHeadingTextTitle {

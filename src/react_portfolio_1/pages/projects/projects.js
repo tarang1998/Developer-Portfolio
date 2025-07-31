@@ -57,7 +57,7 @@ class Projects extends Component {
               <Grid item xs={12} md={6} className="projectHeadingImage">
                 <ProjectImg theme={currentTheme} />
               </Grid>
-              <Grid item xs={12} md={6} className="projectHeadingText" >
+              <Grid item xs={12} md={5} className="projectHeadingText" >
                 <div className="projectHeadingTextTitle">
                   {projectData['title']}
                 </div>

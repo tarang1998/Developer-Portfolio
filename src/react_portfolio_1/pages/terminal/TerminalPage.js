@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './terminalPage.css';
 import { yellow } from '@material-ui/core/colors';
 import { connect } from 'react-redux';
-import { addHistory, addCommandHistory, clearHistory, fetchApiResponse } from '../../store/actions/terminalActions';
+import TextType from '../../utils/TextType/TextType';
+import { addHistory, addCommandHistory, clearHistory, fetchApiResponse, updateHistoryItem } from '../../store/actions/terminalActions';
 import { resumeData } from '../../utils/resumeData'
 import { experience } from '../../utils/experienceData';
 import { education } from '../../utils/educationData';
@@ -35,7 +36,7 @@ const formatMessage = (message) => {
     }).join('');
 };
 
-const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, projectData, addHistory, addCommandHistory, clearHistory, fetchApiResponse, history: routerHistory }) => {
+const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, projectData, addHistory, addCommandHistory, clearHistory, fetchApiResponse, updateHistoryItem, history: routerHistory }) => {
     const [input, setInput] = useState(""); // for display
     const [historyIndex, setHistoryIndex] = useState(null);
     const inputRef = useRef(null);
@@ -56,8 +57,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
             return "<>"
         }
         try {
-            console.log(projectData)
-            const response = await fetchApiResponse(resumeData, projectData, education, experience, cmd);
+            const response = await fetchApiResponse(cmd);
             return response
         }
         catch (error) {
@@ -90,7 +90,6 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                     const action = output.action;
                     const message = output.message;
                     const formattedMessage = formatMessage(message);
-                    console.log(action)
                     // Process the action
                     if (action) {
                         switch (action) {
@@ -115,7 +114,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                             case "navigate_to_resume":
                                 setTimeout(() => {
                                     window.open("https://drive.google.com/file/d/1W4NL7bmhe6pFZFXSWSfFNbjd8QzJWeGe/view?usp=sharing", "_blank");
-                                }, 1000);
+                                }, 5000);
                                 break;
 
                             default:
@@ -123,7 +122,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                         }
                     }
 
-                    addHistory({ cmd: input, output: formattedMessage || output });
+                    addHistory({ cmd: input, output: formattedMessage || output, newInput: true });
                 } catch (parseError) {
                     // If parsing fails, treat output as plain text
                     console.log(parseError)
@@ -185,7 +184,7 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                 <div className="terminal-post-banner" style={{
                     color: theme.name === "dark" ? '#00ff00' : '#4e4c50'
 
-                }}>Welcome to my little corner of the internet. Meet my personal assistant Byte (just a LLM wrapper 😏) — ask it anything, drop an anonymous message, or just stick around and have a conversation!
+                }}>Welcome to my little corner of the internet. Meet my personal assistant Byte (just a LLM wrapper 😏) — ask it anything about my projects, experience, drop an anonymous message, or just stick around and have a conversation!
                 </div>
             </div>
 
@@ -196,7 +195,26 @@ const TerminalPage = ({ theme, history, commandHistory, apiLoading, apiError, pr
                         <span className="terminal-prompt" style={{
                             color: theme.contrast_color
                         }}>tarang@dev-$ <span style={{ color: theme.name === "dark" ? 'yellow' : "blue" }}>{item.cmd}</span></span>
-                        <div className="terminal-output" dangerouslySetInnerHTML={{ __html: item.output }}></div>
+                        {item.newInput ? (
+                            <div className="terminal-output">
+                                <TextType 
+                                    text={[item.output]}
+                                    typingSpeed={5}
+                                    showCursor={false}
+                                    loop={false}
+                                    renderAs={(text) => (
+                                        <div dangerouslySetInnerHTML={{ __html: text }} />
+                                    )}
+                                    onComplete={() => {
+                                       
+                                        updateHistoryItem(i, { ...item, newInput: false });
+                                    }}
+                                  
+                                />
+                            </div>
+                        ) : (
+                            <div className="terminal-output" dangerouslySetInnerHTML={{ __html: item.output }}></div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -246,7 +264,8 @@ const mapDispatchToProps = {
     addHistory,
     addCommandHistory,
     clearHistory,
-    fetchApiResponse
+    fetchApiResponse,
+    updateHistoryItem
 };
 
 

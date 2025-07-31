@@ -7,7 +7,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import ProjectCard from '../../pages/projects/projectCard/projectCard';
-
+import '../greetings/greeting.css';
 
 
 const CurrentWork = ({ currentProjects }) => {
@@ -28,7 +28,12 @@ const CurrentWork = ({ currentProjects }) => {
                         <div className="currently-working-content">
                             <div className="currently-working-header">
                                 <div className="currently-working-indicator"></div>
-                                <h3 style={{ color: currentTheme.contrast_color }} className="currently-working-title">Currently Building</h3>
+                                <p className="greeting-sub-title" style={{
+                                    color: currentTheme.contrast_color
+                                }}>
+                                              <span>Currently Building</span>
+                                            </p>
+                                {/* <h3 style={{ color: currentTheme.contrast_color }} className="currently-working-title">Currently Building</h3> */}
                             </div>
 
                             {currentProjects?.map((project) => {
@@ -48,8 +53,17 @@ const CurrentWork = ({ currentProjects }) => {
                                 return <Grid container className="current-works">
 
                                     <Grid item xs={12} md={5} lg={6} xl={6} >
-                                        <p style={{ color: currentTheme.contrast_color }} className="currently-working-description">
+                                        <p style={{ color: currentTheme.contrast_color }} className="greeting-p"
+                                        // "currently-working-description"
+                                        >
                                             {project.description}
+                                        </p>
+
+                                        <p style={{ color: currentTheme.contrast_color, marginTop: '50px' }} 
+                                        className="greeting-p"
+                                        //"currently-working-description"
+                                        >
+                                            Have a quick glimpse of the work in progress <a href={"https://mindmap-chat-flax.vercel.app/mindmap/775f58be-a6ca-428e-b62b-06a8db6550d8"} target="_blank" rel="noopener noreferrer">here</a>.
                                         </p>
 
                                         {/* <div className="currently-working-tags">

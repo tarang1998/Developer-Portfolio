@@ -1,3 +1,4 @@
+
 .greeting-text-grid-div {
 
   /* display: inline; */
@@ -37,6 +38,13 @@
 .greeting-p {
   /* margin-left: 50px; */
   font-size: var(--textSize);
+}
+
+.greeting-image-grid {
+    justify-content: center !important;
+    align-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .greeting-image-grid>* {

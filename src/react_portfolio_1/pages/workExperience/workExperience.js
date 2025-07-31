@@ -40,15 +40,18 @@ const WorkExperience = () => {
                             {experience["subtitle"]}
                         
                         </h3>
-                        {/* <p
+                        <p
                             className="workExperienceTextGridDescription"
                             style={{ color: currentTheme.contrast_color }}
                         >
-                            {experience["description"]}
+                            <span>
+                                I’ve worked with FINRA, <a href="https://billingfast.com"  target="_blank" rel="noopener noreferrer">billingFast</a>, and <a href="https://www.myracle.io/"  target="_blank" rel="noopener noreferrer">myracle.io</a>, building secure cloud systems, scalable billing platforms, and immersive AR/VR ed-tech apps. My work spans backend APIs, cloud infrastructure, and cross-platform development, impacting thousands of students and businesses.
+
+                            </span>
                            
-                            <br/>
-                            {experience["description1"]}
-                        </p> */}
+                            {/* <br/>
+                            {experience["description1"]} */}
+                        </p>
                     </Grid>
 
                 </Grid>

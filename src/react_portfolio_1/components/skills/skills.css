@@ -10,6 +10,8 @@
 .expertise-indicator {
   width: 12px;
   height: 12px;
+  margin-top: 15px;
+
   border-radius: 50%;
   background: #e40d0d;
   animation: pulse 1s infinite;
@@ -36,6 +38,10 @@
   flex: 1;
   margin-bottom: 30px;
 } */
+ 
+.skills-section-image-grid {
+    padding: 30px;
+}
 
 .skills-section-image-div>* {
   max-width: 100%;

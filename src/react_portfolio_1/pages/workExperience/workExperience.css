@@ -3,6 +3,7 @@
   margin-top: 50px !important;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 
 .workExperienceImageGrid>* {

@@ -105,7 +105,7 @@ const mediaLinks = {
 
 const introduction = {
   aboutMe:
-    "M.Eng in Software Engineering @ University Of Maryland, College Park and a dev with over 3 years of experience building scalable, high-performance full stack applications, and deploying cloud native solutions. Passionate about solving real-world problems through technology and automation. Feel free to reach out!",
+    "A dev with over 3+ years of experience building scalable, high-performance full stack applications, and deploying cloud native solutions. Passionate about solving real-world problems through technology and automation. Feel free to reach out!",
 };
 
 

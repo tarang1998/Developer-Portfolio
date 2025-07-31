@@ -29,25 +29,22 @@ const Education = () => {
 
         <Grid container className="educationHeading">
 
-          <Grid item xs={12} md={5} className="educationHeadingImage">
+          <Grid item xs={12} md={6} className="educationHeadingImage">
               <EducationImg theme={currentTheme}/>
           </Grid>
 
-          <Grid item xs={12} md={7} className="educationHeadingText" >
+          <Grid item xs={12} md={4} className="educationHeadingText" >
 
             <div className="educationHeadingTextTitle">
               {education['title']}
             </div>
 
-            {/* <div className="educationHeadingTextSubtitle">
-              {education['subtitle']}
-            </div>
+      
 
             <div className="educationHeadingTextDescription">
               {education['description']}
-              <br/>
-              {education["description1"]}
-            </div> */}
+             
+            </div>
 
             {/* <ProgrammingPlatFroms programmingPlatforms={education.competitiveProgrammingPlatforms} /> */}
 

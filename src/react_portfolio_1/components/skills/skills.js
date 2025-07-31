@@ -9,7 +9,7 @@ import MobileDevelopmentImg from '../../utils/skillSVGs/MobileDevelopmentImg';
 import SoftwareSkill from '../softwareSkills/softwareSkill';
 import SoftwareDevelopmentImg from '../../utils/skillSVGs/SoftwareDevelopmentImg';
 import { skills } from '../../utils/skillData';
-
+import '../skills/skills.css';
 
 
 function Skills() {
@@ -23,9 +23,15 @@ function Skills() {
           <div className="skills-header-div">
 
             <div className="expertise-indicator"></div>
-            <h1 className="skills-header" style={{ color: currentTheme.contrast_color }}>
+             <p className="greeting-sub-title" style={{
+                                    color: currentTheme.contrast_color
+                                }}>
+                                              <span>My Expertise
+</span>
+                                            </p>
+            {/* <h1 className="skills-header" style={{ color: currentTheme.contrast_color }}>
               My Expertise
-            </h1>
+            </h1> */}
 
           </div>
         </Fade>
@@ -190,7 +196,7 @@ function SkillSection() {
                 </Fade>
               </Grid>
 
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} className='skills-section-image-grid'>
 
                 <Fade right duration={2000}>
                   <div className="skills-section-image-div">

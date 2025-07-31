@@ -47,6 +47,7 @@
 .currently-working-header {
     display: flex;
     align-items: center;
+    align-content: center;
     margin-bottom: 12px;
     gap: 8px;
 }
@@ -54,6 +55,7 @@
 .currently-working-indicator {
     width: 12px;
     height: 12px;
+    margin-top: 15px;
     border-radius: 50%;
     background: #27c93f;
     animation: pulse 1s infinite;
@@ -210,7 +212,7 @@
     }
 
     .currently-working-container {
-        padding: 16px 20px;
+        padding: 16px 25px;
     }
 
 

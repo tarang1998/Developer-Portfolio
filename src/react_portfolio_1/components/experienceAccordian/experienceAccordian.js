@@ -31,7 +31,7 @@ function ExperienceAccordion(props) {
           {props.sections.map((section) => {
             return (
               <Panel
-                expanded={false}
+                expanded={section["isExpanded"]}
                 className="accordianPanel"
                 title={section["title"]}
                 key={section["title"]}

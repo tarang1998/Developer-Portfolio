@@ -4,8 +4,9 @@ export const skills = {
       title: "Cloud & Infra",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Deployed multiple scalable, secure apps using AWS and GCP services in high-traffic production environments.",
-        // "⚡ Architected monitoring solutions for Kubernetes applications using AWS EKS, Prometheus, Grafana, and AWS CloudWatch, delivering real-time observability.",
+        "⚡ Architected multi‑cloud systems on AWS and GCP with auto‑scaling, load balancing, and managed instance groups.",
+        "⚡ Automated infrastructure and CI/CD pipelines using Terraform, CloudFormation, GitHub Actions, and Jenkins.",
+        "⚡ Optimized system cost and performance via query redesign and right‑sizing using Spanner, BigQuery, and monitoring tools."
 
       ],
       softwareSkills: [
@@ -89,6 +90,8 @@ export const skills = {
       fileName: "MobileDevelopmentImg",
       skills: [
         "⚡ Developed scalable cross-platform mobile applications using Flutter, delivering seamless experiences across iOS and Android, with a combined user base of over 15,000 active users.",
+        "⚡ Automated mobile build and deployment pipelines through GitHub Actions, improving release stability.",
+        "⚡ Maintained stability metrics using Sentry, achieving high uptime and error monitoring coverage."
 
       ],
       softwareSkills: [
@@ -123,7 +126,8 @@ export const skills = {
       title: "Web Application Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡Proficient in developing dynamic, responsive, and scalable web applications using React, with deep expertise in React Hooks, and state management libraries such as Redux"
+        "⚡Proficient in developing dynamic, responsive, and scalable web applications using React, with deep expertise in React Hooks, and state management libraries such as Redux.",
+        "⚡ Developed backend APIs in Python and TypeScript with sub‑300 ms latency under heavy load."
       ],
       softwareSkills: [
         {

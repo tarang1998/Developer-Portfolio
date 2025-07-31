@@ -13,6 +13,14 @@ const terminalReducer = (state = initialState, action) => {
                 ...state,
                 history: [...state.history, action.payload]
             };
+        case 'UPDATE_HISTORY_ITEM':
+          
+            return {
+                ...state,
+                history: state.history.map((item, index) => 
+                    index === action.payload.index ? action.payload.updatedEntry : item
+                )
+            };
         case 'ADD_COMMAND_HISTORY':
             if (!action.payload || !action.payload.trim()) return state;
             return {

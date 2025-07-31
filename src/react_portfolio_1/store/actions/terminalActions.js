@@ -4,6 +4,11 @@ export const addHistory = (entry) => ({
     payload: entry
 });
 
+export const updateHistoryItem = (index, updatedEntry) => ({
+    type: 'UPDATE_HISTORY_ITEM',
+    payload: { index, updatedEntry }
+});
+
 export const addCommandHistory = (command) => ({
     type: 'ADD_COMMAND_HISTORY',
     payload: command
@@ -33,7 +38,7 @@ export const fetchApiFailure = (error) => ({
 });
 
 // Thunk action for API calls
-export const fetchApiResponse = (resumeData, projectData, educationData, experienceData, question) => {
+export const fetchApiResponse = (question) => {
     return async (dispatch, getState) => {
         dispatch(fetchApiRequest());
 
@@ -48,10 +53,6 @@ export const fetchApiResponse = (resumeData, projectData, educationData, experie
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        resumeData: resumeData,
-                        projectData: projectData,
-                        experienceData: experienceData,
-                        educationData: educationData,
                         question: question,
                         sessionId: getState().terminal.sessionId
                     })
