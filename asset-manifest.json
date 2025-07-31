@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b93f9fe.chunk.css",
-    "main.js": "/static/js/main.3b4ffeaf.chunk.js",
-    "main.js.map": "/static/js/main.3b4ffeaf.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.af310f2f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.af310f2f.js.map",
-    "static/css/2.3a251c85.chunk.css": "/static/css/2.3a251c85.chunk.css",
-    "static/js/2.37876201.chunk.js": "/static/js/2.37876201.chunk.js",
-    "static/js/2.37876201.chunk.js.map": "/static/js/2.37876201.chunk.js.map",
-    "static/js/3.4b9201d8.chunk.js": "/static/js/3.4b9201d8.chunk.js",
-    "static/js/3.4b9201d8.chunk.js.map": "/static/js/3.4b9201d8.chunk.js.map",
+    "main.css": "/static/css/main.f37cc6f5.chunk.css",
+    "main.js": "/static/js/main.c0d2a62f.chunk.js",
+    "main.js.map": "/static/js/main.c0d2a62f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.25e93405.js",
+    "runtime-main.js.map": "/static/js/runtime-main.25e93405.js.map",
+    "static/css/2.5b6886da.chunk.css": "/static/css/2.5b6886da.chunk.css",
+    "static/js/2.eb3b1f7c.chunk.js": "/static/js/2.eb3b1f7c.chunk.js",
+    "static/js/2.eb3b1f7c.chunk.js.map": "/static/js/2.eb3b1f7c.chunk.js.map",
+    "static/js/3.db8cc767.chunk.js": "/static/js/3.db8cc767.chunk.js",
+    "static/js/3.db8cc767.chunk.js.map": "/static/js/3.db8cc767.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.3a251c85.chunk.css.map": "/static/css/2.3a251c85.chunk.css.map",
-    "static/css/main.2b93f9fe.chunk.css.map": "/static/css/main.2b93f9fe.chunk.css.map",
-    "static/js/2.37876201.chunk.js.LICENSE.txt": "/static/js/2.37876201.chunk.js.LICENSE.txt",
+    "static/css/2.5b6886da.chunk.css.map": "/static/css/2.5b6886da.chunk.css.map",
+    "static/css/main.f37cc6f5.chunk.css.map": "/static/css/main.f37cc6f5.chunk.css.map",
+    "static/js/2.eb3b1f7c.chunk.js.LICENSE.txt": "/static/js/2.eb3b1f7c.chunk.js.LICENSE.txt",
     "static/media/UMCP.svg": "/static/media/UMCP.5022b9de.svg",
     "static/media/UMCP.webp": "/static/media/UMCP.dbd85be0.webp",
     "static/media/VIT.png": "/static/media/VIT.d60927cc.png",
     "static/media/aavhan.png": "/static/media/aavhan.9c813cb6.png",
+    "static/media/billingFastLogo.png": "/static/media/billingFastLogo.fd1294c0.png",
     "static/media/cerebraniumLogo.png": "/static/media/cerebraniumLogo.47280df0.png",
     "static/media/deepLearningAI.png": "/static/media/deepLearningAI.a72123e9.png",
     "static/media/error404.gif": "/static/media/error404.fc69886e.gif",
@@ -27,10 +28,10 @@
     "static/media/tarang1.jpg": "/static/media/tarang1.fd57b585.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.af310f2f.js",
-    "static/css/2.3a251c85.chunk.css",
-    "static/js/2.37876201.chunk.js",
-    "static/css/main.2b93f9fe.chunk.css",
-    "static/js/main.3b4ffeaf.chunk.js"
+    "static/js/runtime-main.25e93405.js",
+    "static/css/2.5b6886da.chunk.css",
+    "static/js/2.eb3b1f7c.chunk.js",
+    "static/css/main.f37cc6f5.chunk.css",
+    "static/js/main.c0d2a62f.chunk.js"
   ]
 }
