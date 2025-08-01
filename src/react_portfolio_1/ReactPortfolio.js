@@ -6,7 +6,7 @@ import Profile from "./components/profile/Profile";
 import WorkExperience from "./pages/workExperience/workExperience";
 import Home from "./pages/home/Home";
 
-import { HashRouter as Router, Switch, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect, useLocation } from "react-router-dom";
 import "./reactPortfolio.css";
 import Fade from 'react-reveal/Fade';
 import Education from "./pages/education/education";
@@ -230,33 +230,34 @@ function ReactPortfolio(props) {
                       // 'max-height' : '200px',
                       // 'overflow-y': 'scroll',
                     }}>
-                                        <Switch>
+                    <Switch>
+                      <Route path="/notes">
+                        <Programming theme={theme} />
+                      </Route>
+                      <Route path="/algorithms-datastructures">
+                        <AlgorithmsDataStructures theme={theme} />
+                      </Route>
+                      <Route path="/projects">
+                        <Projects theme={theme} />
+                      </Route>
+                      <Route path="/education">
+                        <Education />
+                      </Route>
+                      <Route path="/workExperience">
+                        <WorkExperience />
+                      </Route>
                       <Route exact path="/">
-                        <Home></Home>
-                      </Route>
-                      <Route exact path="/workExperience">
-                        <WorkExperience></WorkExperience>
-                      </Route>
-                      <Route exact path="/education">
-                        <Education></Education>
-                      </Route>
-                      <Route exact path="/projects">
-                        <Projects></Projects>
-                      </Route>
-                      <Route exact path="/home">
-                        <Home></Home>
-                      </Route>
-                      <Route exact path="/terminal">
-                        <TerminalPage theme={theme}></TerminalPage>
-                      </Route>
-                      <Route exact path="/programming">
-                        <Programming></Programming>
-                      </Route>
-                      <Route exact path="/algorithms">
-                        <AlgorithmsDataStructures></AlgorithmsDataStructures>
+                        <TerminalPage theme={theme} />
                       </Route>
                       <Route exact path="/resume">
                         <ResumePage></ResumePage>
+                      </Route>
+                      <Route path="/home">
+                        <Home />
+                      </Route>
+                      {/* Catch-all route - redirects any unmatched URLs to /home */}
+                      <Route path="*">
+                        <Redirect to="/home" />
                       </Route>
                     </Switch>
                   </div>
