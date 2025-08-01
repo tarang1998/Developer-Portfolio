@@ -15,6 +15,7 @@ import Programming from "./pages/promgramming/programming";
 import { useEffect, useState } from "react";
 import firebase from "../config/firebaseConfig";
 import TerminalPage from "./pages/terminal/TerminalPage";
+import ResumePage from "./pages/resume/ResumePage";
 import AlgorithmsDataStructures from "./pages/algorithms-datastructures/algorithms-datastructures";
 
 // Enhanced Scroll to top component with comprehensive scroll management
@@ -229,27 +230,33 @@ function ReactPortfolio(props) {
                       // 'max-height' : '200px',
                       // 'overflow-y': 'scroll',
                     }}>
-                    <Switch>
-                      <Route path="/notes">
-                        <Programming theme={theme} />
-                      </Route>
-                      <Route path="/algorithms-datastructures">
-                        <AlgorithmsDataStructures theme={theme} />
-                      </Route>
-                      <Route path="/projects">
-                        <Projects theme={theme} />
-                      </Route>
-                      <Route path="/education">
-                        <Education />
-                      </Route>
-                      <Route path="/workExperience">
-                        <WorkExperience />
-                      </Route>
+                                        <Switch>
                       <Route exact path="/">
-                        <TerminalPage theme={theme} />
+                        <Home></Home>
                       </Route>
-                      <Route path="/home">
-                        <Home />
+                      <Route exact path="/workExperience">
+                        <WorkExperience></WorkExperience>
+                      </Route>
+                      <Route exact path="/education">
+                        <Education></Education>
+                      </Route>
+                      <Route exact path="/projects">
+                        <Projects></Projects>
+                      </Route>
+                      <Route exact path="/home">
+                        <Home></Home>
+                      </Route>
+                      <Route exact path="/terminal">
+                        <TerminalPage theme={theme}></TerminalPage>
+                      </Route>
+                      <Route exact path="/programming">
+                        <Programming></Programming>
+                      </Route>
+                      <Route exact path="/algorithms">
+                        <AlgorithmsDataStructures></AlgorithmsDataStructures>
+                      </Route>
+                      <Route exact path="/resume">
+                        <ResumePage></ResumePage>
                       </Route>
                     </Switch>
                   </div>

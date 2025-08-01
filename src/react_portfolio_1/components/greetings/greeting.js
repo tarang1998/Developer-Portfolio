@@ -78,7 +78,7 @@ const Greetings = (data) => {
 
               <Button
                 className="resume-button"
-                onClick={() => window.open(resumeLink, "_blank")}
+                onClick={() => window.location.hash = '#/resume'}
                 style={{ color: currentTheme.contrast_color }}
               >
                 <GetApp style={{ marginRight: '8px', fontSize: '18px' }} />

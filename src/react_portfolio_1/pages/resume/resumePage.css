@@ -1,0 +1,311 @@
+.resume-page-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audio-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.audio-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.play-button {
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.slider-container {
+    flex: 1;
+    min-width: 100px;
+}
+
+.audio-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.audio-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #4a9eff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.audio-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #4a9eff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-display {
+    font-size: 0.9rem;
+    font-family: monospace;
+    min-width: 40px;
+    text-align: center;
+}
+
+.pdf-section {
+    margin-top: 2rem;
+}
+
+.pdf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.pdf-header h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.pdf-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pdf-control-btn, .nav-btn {
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pdf-control-btn:hover, .nav-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.pdf-control-btn:disabled, .nav-btn:disabled {
+    cursor: not-allowed;
+}
+
+.zoom-display {
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 40px;
+    text-align: center;
+}
+
+.pdf-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.page-display {
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 100px;
+    text-align: center;
+}
+
+.pdf-container {
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.pdf-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-sections {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-sections h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.section-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.section-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .resume-page-container {
+        padding: 1rem;
+    }
+
+    .audio-section h2, .pdf-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .audio-player {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .audio-controls {
+        width: 100%;
+    }
+
+    .play-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .pdf-header {
+        align-items: stretch;
+    }
+
+    .pdf-controls, .pdf-navigation {
+        justify-content: center;
+    }
+
+    .pdf-container iframe {
+        height: 400px;
+    }
+
+    .section-links {
+        justify-content: center;
+    }
+
+    .section-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .resume-page-container {
+        padding: 0rem;
+        margin: 0px;
+    }
+
+    .audio-player {
+        gap: 1rem;
+    }
+
+    .audio-section h2, .pdf-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .play-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pdf-control-btn, .nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .time-display {
+        font-size: 0.8rem;
+        min-width: 35px;
+    }
+
+    .zoom-display, .page-display {
+        font-size: 0.8rem;
+    }
+
+    .section-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .pdf-sections {
+        padding: 1rem;
+    }
+
+    .pdf-sections h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 320px) {
+     .audio-player {
+        flex-direction: column;
+        align-content: start !important;
+    }
+}
