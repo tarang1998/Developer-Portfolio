@@ -16,9 +16,7 @@ const ResumePage = () => {
     const [duration, setDuration] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     
-    // PDF state
-    const [pdfZoom, setPdfZoom] = useState(100);
-
+    
     // Audio event handlers
     const handlePlayPause = async () => {
         console.log(audioRef)
@@ -82,22 +80,6 @@ const ResumePage = () => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    };
-
-    // PDF handlers
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = personalData.resumeLink;
-        link.download = 'Resume.pdf';
-        link.click();
-    };
-
-    const handleZoomIn = () => {
-        setPdfZoom(prev => Math.min(prev + 25, 200));
-    };
-
-    const handleZoomOut = () => {
-        setPdfZoom(prev => Math.max(prev - 25, 50));
     };
 
   
@@ -190,57 +172,19 @@ const ResumePage = () => {
                         <div className="pdf-section">
                             <div className="pdf-header">
                                 <h2 style={{ color: currentTheme.contrast_color }}>My Resume</h2>
-                                <div className="pdf-controls">
-                                    <button 
-                                        className="pdf-control-btn"
-                                        onClick={handleDownload}
-                                        style={{ 
-                                            backgroundColor: currentTheme.name === 'dark' ? '#2c2c2c' : '#f0f0f0',
-                                            color: currentTheme.contrast_color 
-                                        }}
-                                        title="Download PDF"
-                                    >
-                                        <GetApp />
-                                    </button>
-                                    <button 
-                                        className="pdf-control-btn"
-                                        onClick={handleZoomOut}
-                                        style={{ 
-                                            backgroundColor: currentTheme.name === 'dark' ? '#2c2c2c' : '#f0f0f0',
-                                            color: currentTheme.contrast_color 
-                                        }}
-                                        title="Zoom Out"
-                                    >
-                                        <ZoomOut />
-                                    </button>
-                                    <span className="zoom-display" style={{ color: currentTheme.contrast_color }}>
-                                        {pdfZoom}%
-                                    </span>
-                                    <button 
-                                        className="pdf-control-btn"
-                                        onClick={handleZoomIn}
-                                        style={{ 
-                                            backgroundColor: currentTheme.name === 'dark' ? '#2c2c2c' : '#f0f0f0',
-                                            color: currentTheme.contrast_color 
-                                        }}
-                                        title="Zoom In"
-                                    >
-                                        <ZoomIn />
-                                    </button>
-                                </div>
+                                
                             </div>
                             
                             
                             <div className="pdf-container">
                                 <iframe
-                                    src={personalData.resumeLink}
+                                    src={`https://r.tiiny.site/pdf/Resume`}
                                     title="Resume PDF"
                                     width="100%"
                                     height="600px"
                                     style={{
                                         border: `1px solid ${currentTheme.name === 'dark' ? '#404040' : '#e0e0e0'}`,
                                         borderRadius: '8px',
-                                        transform: `scale(${pdfZoom / 100})`,
                                         transformOrigin: 'top left'
                                     }}
                                 />
