@@ -246,7 +246,7 @@ function ReactPortfolio(props) {
                       <Route path="/workExperience">
                         <WorkExperience />
                       </Route>
-                      <Route exact path="/">
+                      <Route exact path="/terminal">
                         <TerminalPage theme={theme} />
                       </Route>
                       <Route exact path="/resume">

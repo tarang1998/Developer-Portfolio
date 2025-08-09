@@ -40,7 +40,7 @@ const Sidebar = (props) => {
         );
 
     const navItems = [
-        { path: "/", icon: <Computer />, label: "Terminal" },
+        { path: "/terminal", icon: <Computer />, label: "Terminal" },
         { path: "/home", icon: <HomeRounded />, label: "Home" },
         { path: "/projects", icon: <FolderOpen />, label: "Projects" },
         { path: "/workExperience", icon: <WorkOutline />, label: "Experience" },
